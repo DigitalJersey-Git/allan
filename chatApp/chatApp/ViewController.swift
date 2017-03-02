@@ -49,15 +49,19 @@ class ViewController: UIViewController {
     
     @IBAction func buttonSelected(_ sender: Any) {
         if userNameField.text != "" {
-            self.userID = userNameField.text! + "-"
             
-            if let randomS = randomString(10) {
-                self.userID?.append(randomS)
+            // Don't want to ser the userID again if we already have one.
+            if self.userID == nil {
+                self.userID = userNameField.text! + "-"
+                
+                if let randomS = randomString(10) {
+                    self.userID?.append(randomS)
+                }
+            
+                defaults.set(self.userID, forKey: "userID")
+                defaults.set(userNameField.text, forKey: "username")
+                defaults.synchronize()
             }
-        
-            defaults.set(self.userID, forKey: "userID")
-            defaults.set(userNameField.text, forKey: "username")
-            defaults.synchronize()
             
             if let userid = self.userID, let username = userNameField.text {
                 
@@ -100,17 +104,5 @@ class ViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
         }
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        /*
-        if segue.identifier == "signInSegue" {
-            if let nextViewController = segue.destination as? groupListViewController {
-                nextViewController.userID = self.userID
-                nextViewController.userName = userNameField.text
-            }
-        }
-        */
-    }
-    
 }
 
