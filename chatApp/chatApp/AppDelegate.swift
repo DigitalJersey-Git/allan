@@ -1,12 +1,13 @@
 //
 //  AppDelegate.swift
-//  MyChatApp
+//  chatApp
 //
-//  Created by Pister Family on 2/20/17.
-//  Copyright © 2017 MulgaKittyProductions. All rights reserved.
+//  Created by Allan Pister on 25/02/2017.
+//  Copyright © 2017 Mugla Kitty. All rights reserved.
 //
 
 import UIKit
+import SendBirdSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        SBDMain.initWithApplicationId("4FD1E69D-3DFF-402C-94F4-C5565735E905")
+        
         return true
     }
 
