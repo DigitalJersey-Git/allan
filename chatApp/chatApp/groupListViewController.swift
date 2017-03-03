@@ -24,7 +24,7 @@ class groupListViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func createOpenChannel() {
         let query = SBDOpenChannel.createOpenChannelListQuery()
-        query?.limit = 100
+        query?.limit = 1
         
         query?.loadNextPage(completionHandler: {[unowned self]
             (channels, error) in
@@ -66,14 +66,15 @@ class groupListViewController: UIViewController, UITableViewDelegate, UITableVie
         return cell
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if(segue.identifier == "membersListViewController") {
+            let membersController = (segue.destination as! membersListViewController)
+            membersController.channel = channels.first
+        }
     }
-    */
 
 }

@@ -57,7 +57,7 @@ class ViewController: UIViewController {
                 if let randomS = randomString(10) {
                     self.userID?.append(randomS)
                 }
-            
+                
                 defaults.set(self.userID, forKey: "userID")
                 defaults.set(userNameField.text, forKey: "username")
                 defaults.synchronize()
@@ -104,5 +104,13 @@ class ViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "membersListViewController") {
+            let membersController = (segue.destination as! membersListViewController)
+            //membersController.chaznnel = channels.first
+        }
+    }
+    
 }
 
