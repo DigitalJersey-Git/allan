@@ -11,12 +11,19 @@ import SendBirdSDK
 
 class groupCell: UITableViewCell {
 
+    @IBOutlet weak var groupName: UILabel!
     @IBOutlet weak var groupImage: UIImageView!
     @IBOutlet weak var groupParicapantCnt: UILabel!
-    @IBOutlet weak var groupName: UILabel!
     
     private var channel: SBDOpenChannel!
-
+    
+    var group: Group! {
+        didSet {
+            groupName.text = group.name
+            //groupImage.image = imageForGroup()
+        }
+    }
+    
     func imageForGroup() -> UIImage? {
         return UIImage(named: "chatimg")
     }

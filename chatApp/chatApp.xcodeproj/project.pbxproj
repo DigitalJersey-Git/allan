@@ -21,6 +21,7 @@
 		9DB4CCF41E66E58300116550 /* group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB4CCF31E66E58300116550 /* group.swift */; };
 		9DB4CCF81E683A0000116550 /* membersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB4CCF71E683A0000116550 /* membersCell.swift */; };
 		9DB4CCFA1E6843C700116550 /* membersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB4CCF91E6843C700116550 /* membersListViewController.swift */; };
+		FC841EAA1E6DE9BF001E49B2 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC841EA91E6DE9BF001E49B2 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		C4DAD5174A2240EBDEA5F893 /* Pods_chatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_chatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA37FD21E3F6C0243A0F3FA6 /* Pods-chatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chatApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-chatApp/Pods-chatApp.release.xcconfig"; sourceTree = "<group>"; };
 		FAD5198F4CB3E9EF89827D43 /* Pods-chatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chatApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-chatApp/Pods-chatApp.debug.xcconfig"; sourceTree = "<group>"; };
+		FC841EA91E6DE9BF001E49B2 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				9DB4CCF21E66E56B00116550 /* Model */,
 				9DB4CCCB1E61A96800116550 /* AppDelegate.swift */,
 				9DB4CCCD1E61A96800116550 /* ViewController.swift */,
+				FC841EA91E6DE9BF001E49B2 /* TabBarController.swift */,
 				9DB4CCCF1E61A96800116550 /* Main.storyboard */,
 				9DB4CCDD1E61A9C000116550 /* images */,
 				9DB4CCD21E61A96800116550 /* Assets.xcassets */,
@@ -272,6 +275,7 @@
 				9DB4CCFA1E6843C700116550 /* membersListViewController.swift in Sources */,
 				9DB4CCE51E61AD2200116550 /* global.swift in Sources */,
 				9DB4CCF41E66E58300116550 /* group.swift in Sources */,
+				FC841EAA1E6DE9BF001E49B2 /* TabBarController.swift in Sources */,
 				9DB4CCCE1E61A96800116550 /* ViewController.swift in Sources */,
 				9DB4CCCC1E61A96800116550 /* AppDelegate.swift in Sources */,
 				9DB4CCF81E683A0000116550 /* membersCell.swift in Sources */,

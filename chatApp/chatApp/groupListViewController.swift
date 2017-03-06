@@ -9,11 +9,17 @@
 import UIKit
 import SendBirdSDK
 
+protocol protoCurrentChannel: class {
+    func setCurrentChannel(currentChannel: SBDOpenChannel)
+}
+
 class groupListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var groupTableView: UITableView!
     
     private var channels: [SBDOpenChannel] = []
+    
+    weak var delegate:protoCurrentChannel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +28,15 @@ class groupListViewController: UIViewController, UITableViewDelegate, UITableVie
         self.createOpenChannel()
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
     func createOpenChannel() {
         let query = SBDOpenChannel.createOpenChannelListQuery()
-        query?.limit = 1
+        query?.limit = 2
         
         query?.loadNextPage(completionHandler: {[unowned self]
             (channels, error) in
@@ -39,16 +51,19 @@ class groupListViewController: UIViewController, UITableViewDelegate, UITableVie
             
             DispatchQueue.main.async {
                 self.groupTableView.reloadData()
+                if let channel = self.channels.first {
+                    self.delegate?.setCurrentChannel(currentChannel: channel)
+                }
             }
             // ...
         })
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        delegate?.setCurrentChannel(currentChannel: self.channels[indexPath.row])
+    }
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -66,15 +81,14 @@ class groupListViewController: UIViewController, UITableViewDelegate, UITableVie
         return cell
     }
     
-    
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "membersListViewController") {
-            let membersController = (segue.destination as! membersListViewController)
-            membersController.channel = channels.first
-        }
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
+    */
 
 }

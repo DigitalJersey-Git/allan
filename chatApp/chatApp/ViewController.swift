@@ -9,7 +9,7 @@
 import UIKit
 import SendBirdSDK
 
-class ViewController: UIViewController {
+class ViewController: UIViewController  {
 
     @IBOutlet weak var userNameField: UITextField!
     @IBOutlet weak var createButton: UIButton!
@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     func randomString(_ length: Int) -> String? {
         
         let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
@@ -49,19 +49,18 @@ class ViewController: UIViewController {
     
     @IBAction func buttonSelected(_ sender: Any) {
         if userNameField.text != "" {
+            self.userID = userNameField.text! + "-"
             
-            // Don't want to ser the userID again if we already have one.
-            if self.userID == nil {
-                self.userID = userNameField.text! + "-"
-                
-                if let randomS = randomString(10) {
-                    self.userID?.append(randomS)
-                }
-                
-                defaults.set(self.userID, forKey: "userID")
-                defaults.set(userNameField.text, forKey: "username")
-                defaults.synchronize()
+            if let randomS = randomString(10) {
+                self.userID?.append(randomS)
             }
+            
+            self.userID = "Allan-kYbuu4Mxad"
+        
+            defaults.set(self.userID, forKey: "userID")
+            defaults.set(userNameField.text, forKey: "username")
+            
+            defaults.synchronize()
             
             if let userid = self.userID, let username = userNameField.text {
                 
@@ -106,10 +105,7 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "membersListViewController") {
-            let membersController = (segue.destination as! membersListViewController)
-            //membersController.chaznnel = channels.first
-        }
+        //print(segue.identifier)
     }
     
 }
