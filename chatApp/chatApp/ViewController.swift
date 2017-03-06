@@ -105,7 +105,7 @@ class ViewController: UIViewController  {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //print(segue.identifier)
+        print(segue.identifier)
     }
     
 }

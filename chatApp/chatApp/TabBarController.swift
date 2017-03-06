@@ -9,12 +9,14 @@
 import UIKit
 import SendBirdSDK
 
-class TabBarController: UITabBarController, protoCurrentChannel {
+class TabBarController: UITabBarController, UITabBarControllerDelegate, protoCurrentChannel {
     
     var channel: SBDOpenChannel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.delegate = self
 
         // Do any additional setup after loading the view.
         if let viewlist = self.viewControllers {
@@ -37,10 +39,19 @@ class TabBarController: UITabBarController, protoCurrentChannel {
         self.channel = currentChannel
     }
     
-    
-    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        print("Selected \(self.tabBarController?.selectedIndex)")
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        if let view = viewController as? membersListViewController {
+            view.channel = self.channel
+            view.loadData()
+        }
     }
+    
+    //override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+    //    //print("Selected \(item.title)")
+    //    //if let view = self.selectedViewController as? membersListViewController {
+        //    view.channel = self.channel
+        //}
+    //}
     
     // MARK: - Navigation
 
