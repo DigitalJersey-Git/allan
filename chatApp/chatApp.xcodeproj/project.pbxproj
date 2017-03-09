@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		563B68DE521D272564959168 /* Pods_chatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4DAD5174A2240EBDEA5F893 /* Pods_chatApp.framework */; };
+		9DA1D52C1E71747200FF593B /* channelChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA1D52B1E71747200FF593B /* channelChatViewController.swift */; };
+		9DA1D52E1E717FD600FF593B /* ChattingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DA1D52D1E717FD600FF593B /* ChattingView.xib */; };
+		9DA1D5321E71901100FF593B /* chattingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA1D5311E71901100FF593B /* chattingView.swift */; };
+		9DA1D5341E71A4E100FF593B /* IncomingUserMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA1D5331E71A4E100FF593B /* IncomingUserMessageTableViewCell.swift */; };
+		9DA1D5361E71A50E00FF593B /* IncomingUserMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DA1D5351E71A50E00FF593B /* IncomingUserMessageTableViewCell.xib */; };
+		9DA1D5381E71B52C00FF593B /* MessageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA1D5371E71B52C00FF593B /* MessageDelegate.swift */; };
 		9DB4CCCC1E61A96800116550 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB4CCCB1E61A96800116550 /* AppDelegate.swift */; };
 		9DB4CCCE1E61A96800116550 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB4CCCD1E61A96800116550 /* ViewController.swift */; };
 		9DB4CCD11E61A96800116550 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DB4CCCF1E61A96800116550 /* Main.storyboard */; };
@@ -25,6 +31,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9DA1D52B1E71747200FF593B /* channelChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = channelChatViewController.swift; sourceTree = "<group>"; };
+		9DA1D52D1E717FD600FF593B /* ChattingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChattingView.xib; sourceTree = "<group>"; };
+		9DA1D5311E71901100FF593B /* chattingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chattingView.swift; sourceTree = "<group>"; };
+		9DA1D5331E71A4E100FF593B /* IncomingUserMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncomingUserMessageTableViewCell.swift; sourceTree = "<group>"; };
+		9DA1D5351E71A50E00FF593B /* IncomingUserMessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IncomingUserMessageTableViewCell.xib; sourceTree = "<group>"; };
+		9DA1D5371E71B52C00FF593B /* MessageDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageDelegate.swift; sourceTree = "<group>"; };
 		9DB4CCC81E61A96800116550 /* chatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DB4CCCB1E61A96800116550 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DB4CCCD1E61A96800116550 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +87,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9DA1D52A1E71740A00FF593B /* chatChannel */ = {
+			isa = PBXGroup;
+			children = (
+				9DA1D52B1E71747200FF593B /* channelChatViewController.swift */,
+				9DA1D52D1E717FD600FF593B /* ChattingView.xib */,
+				9DA1D5311E71901100FF593B /* chattingView.swift */,
+				9DA1D5331E71A4E100FF593B /* IncomingUserMessageTableViewCell.swift */,
+				9DA1D5351E71A50E00FF593B /* IncomingUserMessageTableViewCell.xib */,
+				9DA1D5371E71B52C00FF593B /* MessageDelegate.swift */,
+			);
+			name = chatChannel;
+			sourceTree = "<group>";
+		};
 		9DB4CCBF1E61A96800116550 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +121,7 @@
 		9DB4CCCA1E61A96800116550 /* chatApp */ = {
 			isa = PBXGroup;
 			children = (
+				9DA1D52A1E71740A00FF593B /* chatChannel */,
 				9DB4CCF61E6839D700116550 /* members */,
 				9DB4CCF51E6839C600116550 /* groups */,
 				9DB4CCF21E66E56B00116550 /* Model */,
@@ -209,6 +235,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DA1D52E1E717FD600FF593B /* ChattingView.xib in Resources */,
+				9DA1D5361E71A50E00FF593B /* IncomingUserMessageTableViewCell.xib in Resources */,
 				9DB4CCD61E61A96800116550 /* LaunchScreen.storyboard in Resources */,
 				9DB4CCE31E61AAD600116550 /* button.jpg in Resources */,
 				9DB4CCD31E61A96800116550 /* Assets.xcassets in Resources */,
@@ -272,13 +300,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DA1D5341E71A4E100FF593B /* IncomingUserMessageTableViewCell.swift in Sources */,
 				9DB4CCFA1E6843C700116550 /* membersListViewController.swift in Sources */,
 				9DB4CCE51E61AD2200116550 /* global.swift in Sources */,
+				9DA1D52C1E71747200FF593B /* channelChatViewController.swift in Sources */,
 				9DB4CCF41E66E58300116550 /* group.swift in Sources */,
 				FC841EAA1E6DE9BF001E49B2 /* TabBarController.swift in Sources */,
 				9DB4CCCE1E61A96800116550 /* ViewController.swift in Sources */,
+				9DA1D5321E71901100FF593B /* chattingView.swift in Sources */,
 				9DB4CCCC1E61A96800116550 /* AppDelegate.swift in Sources */,
 				9DB4CCF81E683A0000116550 /* membersCell.swift in Sources */,
+				9DA1D5381E71B52C00FF593B /* MessageDelegate.swift in Sources */,
 				9DB4CCED1E647CF000116550 /* groupCell.swift in Sources */,
 				9DB4CCF11E65B65E00116550 /* groupListViewController.swift in Sources */,
 			);

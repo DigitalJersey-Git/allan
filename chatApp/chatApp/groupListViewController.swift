@@ -41,7 +41,7 @@ class groupListViewController: UIViewController, UITableViewDelegate, UITableVie
         query?.loadNextPage(completionHandler: {[unowned self]
             (channels, error) in
             if error != nil {
-                NSLog("Error: %@", error!)
+                print("Error: \(error!)")
                 return
             }
             
@@ -62,6 +62,18 @@ class groupListViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         delegate?.setCurrentChannel(currentChannel: self.channels[indexPath.row])
+        
+        self.channels[indexPath.row].enter { (error) in
+            if error != nil {
+                print("Error: \(error!)")
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "", sender: self)
+            }
+        }
+        
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
