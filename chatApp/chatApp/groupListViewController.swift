@@ -18,6 +18,8 @@ class groupListViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var groupTableView: UITableView!
     
     private var channels: [SBDOpenChannel] = []
+    private var selectedChannel: SBDOpenChannel?
+    
     
     weak var delegate:protoCurrentChannel?
 
@@ -89,18 +91,22 @@ class groupListViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath)
         
         (cell as! groupCell).setCellInfo(aChannel: self.channels[indexPath.row])
+        selectedChannel = self.channels[indexPath.row]
         
         return cell
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "chatViewController" {
+            let controller = segue.destination as! channelChatViewController
+            controller.channel = selectedChannel
+        }
     }
-    */
-
 }

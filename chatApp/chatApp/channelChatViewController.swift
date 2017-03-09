@@ -28,13 +28,12 @@ class channelChatViewController: UIViewController, SBDConnectionDelegate, SBDCha
         fullTitle = NSMutableAttributedString(string: title)
         fullTitle?.addAttributes(mainTitleAttribute!, range: NSMakeRange(0, title.characters.count))
         
-        
         titleView.attributedText = fullTitle
         titleView.numberOfLines = 2
         titleView.textAlignment = NSTextAlignment.center
         // Do any additional setup after loading the view.
         
-        self.navItem.titleView = titleView
+        //self.navItem.titleView = titleView
         
         SBDMain.add(self as SBDChannelDelegate, identifier: self.description)
         SBDMain.add(self as SBDConnectionDelegate, identifier: self.description)
