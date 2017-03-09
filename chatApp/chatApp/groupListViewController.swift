@@ -70,7 +70,7 @@ class groupListViewController: UIViewController, UITableViewDelegate, UITableVie
             }
             
             DispatchQueue.main.async {
-                self.performSegue(withIdentifier: "", sender: self)
+                self.performSegue(withIdentifier: "chatViewController", sender: self)
             }
         }
         

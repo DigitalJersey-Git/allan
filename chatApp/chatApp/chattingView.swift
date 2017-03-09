@@ -44,7 +44,7 @@ class ReusableViewFromXib: UIView {
     }
 }
 
-class chattingView: ReusableViewFromXib, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate {
+class chattingView: ReusableViewFromXib, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var chattingTableView: UITableView!
     @IBOutlet weak var messageTextView: UITextView!
     @IBOutlet weak var placeholderLabel: UILabel!
