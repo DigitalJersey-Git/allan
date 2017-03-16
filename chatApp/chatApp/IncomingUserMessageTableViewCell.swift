@@ -12,10 +12,30 @@ import SendBirdSDK
 class IncomingUserMessageTableViewCell: UITableViewCell {
     weak var delegate: MessageDelegate?
 
-    
     @IBOutlet weak var dateSeperatorContainerView: UIView!
     @IBOutlet weak var dateSeperatorLabel: UILabel!
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var messageDateLabel: UILabel!
+    @IBOutlet weak var messageContainerView: UIView!
     
+    @IBOutlet weak var dateLabelContainerHeight: NSLayoutConstraint!
+    @IBOutlet weak var messageDateLabelWidth: NSLayoutConstraint!
+    @IBOutlet weak var dateContainerViewTopMargin: NSLayoutConstraint!
+    @IBOutlet weak var profileImageLeftMargin: NSLayoutConstraint!
+    @IBOutlet weak var messageContainerLeftMargin: NSLayoutConstraint!
+    @IBOutlet weak var profileImageWidth: NSLayoutConstraint!
+    @IBOutlet weak var messageContainerLeftPadding: NSLayoutConstraint!
+    @IBOutlet weak var messageContainerBottomPadding: NSLayoutConstraint!
+    @IBOutlet weak var messageContainerRightPadding: NSLayoutConstraint!
+    @IBOutlet weak var messageContainerTopPadding: NSLayoutConstraint!
+    @IBOutlet weak var messageDateLabelLeftMargin: NSLayoutConstraint!
+    @IBOutlet weak var messageDateLabelRightMargin: NSLayoutConstraint!
+    @IBOutlet weak var dateContainerBottomMargin: NSLayoutConstraint!
+    
+    private var message: SBDUserMessage!
+    private var prevMessage: SBDBaseMessage!
+    private var displayNickname: Bool = true
     
     static func nib() -> UINib {
         return UINib(nibName: String(describing: self), bundle: Bundle(for: self))
@@ -43,14 +63,14 @@ class IncomingUserMessageTableViewCell: UITableViewCell {
     }
     
     func setModel(aMessage: SBDUserMessage) {
-        /*
+
         self.message = aMessage
         
         self.profileImageView.af_setImage(withURL: URL(string: (self.message.sender?.profileUrl!)!)!, placeholderImage: UIImage(named: "img_profile"))
         
-        let profileImageTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(clickProfileImage))
+        //let profileImageTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(clickProfileImage))
         self.profileImageView.isUserInteractionEnabled = true
-        self.profileImageView.addGestureRecognizer(profileImageTapRecognizer)
+        //self.profileImageView.addGestureRecognizer(profileImageTapRecognizer)
         
         let messageContainerTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(clickUserMessage))
         self.messageContainerView.isUserInteractionEnabled = true
@@ -58,8 +78,8 @@ class IncomingUserMessageTableViewCell: UITableViewCell {
         
         // Message Date
         let messageDateAttribute = [
-            NSFontAttributeName: Constants.messageDateFont(),
-            NSForegroundColorAttributeName: Constants.messageDateColor()
+            NSFontAttributeName: UIFont(name: "HelveticaNeue", size: 10.0),
+            NSForegroundColorAttributeName: UIColor(red: 191.0/255.0, green: 191.0/255.0, blue: 191.0/255.0, alpha: 1)
         ]
         
         let messageTimestamp = Double(self.message.createdAt) / 1000.0
@@ -150,7 +170,7 @@ class IncomingUserMessageTableViewCell: UITableViewCell {
  
         let fullMessage = self.buildMessage()
         self.messageLabel.attributedText = fullMessage
- */
+ 
         self.layoutIfNeeded()
     }
     
@@ -159,67 +179,19 @@ class IncomingUserMessageTableViewCell: UITableViewCell {
     }
     
     func buildMessage() -> NSAttributedString {
-        var nicknameAttribute: [String:AnyObject]?
-        /*
-        switch (self.message.sender?.nickname?.characters.count)! % 5 {
-        case 0:
-            nicknameAttribute = [
-                NSFontAttributeName: Constants.nicknameFontInMessage(),
-                NSForegroundColorAttributeName: Constants.nicknameColorInMessageNo0()
-            ]
-            break;
-        case 1:
-            nicknameAttribute = [
-                NSFontAttributeName: Constants.nicknameFontInMessage(),
-                NSForegroundColorAttributeName: Constants.nicknameColorInMessageNo1()
-            ]
-            break;
-        case 2:
-            nicknameAttribute = [
-                NSFontAttributeName: Constants.nicknameFontInMessage(),
-                NSForegroundColorAttributeName: Constants.nicknameColorInMessageNo2()
-            ]
-            break;
-        case 3:
-            nicknameAttribute = [
-                NSFontAttributeName: Constants.nicknameFontInMessage(),
-                NSForegroundColorAttributeName: Constants.nicknameColorInMessageNo3()
-            ]
-            break;
-        case 4:
-            nicknameAttribute = [
-                NSFontAttributeName: Constants.nicknameFontInMessage(),
-                NSForegroundColorAttributeName: Constants.nicknameColorInMessageNo4()
-            ]
-            break;
-        default:
-            nicknameAttribute = [
-                NSFontAttributeName: Constants.nicknameFontInMessage(),
-                NSForegroundColorAttributeName: Constants.nicknameColorInMessageNo0()
-            ]
-            break;
-        }
- 
+        
         let messageAttribute = [
-            NSFontAttributeName: Constants.messageFont()
+            NSFontAttributeName: UIFont(name: "HelveticaNeue", size: 16.0)
         ]
         
-        let nickname = self.message.sender?.nickname
+        //let nickname = self.message.sender?.nickname
         let message = self.message.message
-        */
+        
         var fullMessage: NSMutableAttributedString? = nil
-        /*
-        if self.displayNickname == true {
-            fullMessage = NSMutableAttributedString.init(string: NSString(format: "%@\n%@", nickname!, message!) as String)
-            
-            fullMessage?.addAttributes(nicknameAttribute!, range: NSMakeRange(0, (nickname?.characters.count)!))
-            fullMessage?.addAttributes(messageAttribute, range: NSMakeRange((nickname?.characters.count)! + 1, (message?.characters.count)!))
-        }
-        else {
-            fullMessage = NSMutableAttributedString.init(string: message!)
-            fullMessage?.addAttributes(messageAttribute, range: NSMakeRange(0, (message?.characters.count)!))
-        }
-        */
+        
+        fullMessage = NSMutableAttributedString.init(string: message!)
+        fullMessage?.addAttributes(messageAttribute, range: NSMakeRange(0, (message?.characters.count)!))
+        
 
         return fullMessage!
     }
@@ -228,14 +200,13 @@ class IncomingUserMessageTableViewCell: UITableViewCell {
         let fullMessage = self.buildMessage()
         
         var fullMessageRect: CGRect
-        let cellHeight: CGFloat = 0.0
-        /*
+        
         let messageLabelMaxWidth = self.frame.size.width - (self.profileImageLeftMargin.constant + self.profileImageWidth.constant + self.messageContainerLeftMargin.constant + self.messageContainerLeftPadding.constant + self.messageContainerRightPadding.constant + self.messageDateLabelLeftMargin.constant + self.messageDateLabelWidth.constant + self.messageDateLabelRightMargin.constant)
+        
         fullMessageRect = fullMessage.boundingRect(with: CGSize.init(width: messageLabelMaxWidth, height: CGFloat.greatestFiniteMagnitude), options: NSStringDrawingOptions.usesLineFragmentOrigin, context: nil)
         
-        
         let cellHeight = self.dateContainerViewTopMargin.constant + self.dateLabelContainerHeight.constant + self.dateContainerBottomMargin.constant + self.messageContainerTopPadding.constant + fullMessageRect.size.height + self.messageContainerBottomPadding.constant
-        */
+
         return cellHeight
     }
 

@@ -69,11 +69,9 @@ class chattingView: ReusableViewFromXib, UITableViewDelegate, UITableViewDataSou
     
     
     var incomingUserMessageSizingTableViewCell: IncomingUserMessageTableViewCell?
-    //var outgoingUserMessageSizingTableViewCell: OutgoingUserMessageTableViewCell?
-    //var neutralMessageSizingTableViewCell: NeutralMessageTableViewCell?
+    var outgoingUserMessageSizingTableViewCell: OutgoingUserMessageTableViewCell?
     
     var delegate: ChattingViewDelegate & MessageDelegate?
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -100,7 +98,7 @@ class chattingView: ReusableViewFromXib, UITableViewDelegate, UITableViewDataSou
         self.messageTextView.delegate = self
         
         self.chattingTableView.register(IncomingUserMessageTableViewCell.nib(), forCellReuseIdentifier: IncomingUserMessageTableViewCell.cellReuseIdentifier())
-        //self.chattingTableView.register(OutgoingUserMessageTableViewCell.nib(), forCellReuseIdentifier: OutgoingUserMessageTableViewCell.cellReuseIdentifier())
+        self.chattingTableView.register(OutgoingUserMessageTableViewCell.nib(), forCellReuseIdentifier: OutgoingUserMessageTableViewCell.cellReuseIdentifier())
         //self.chattingTableView.register(NeutralMessageTableViewCell.nib(), forCellReuseIdentifier: NeutralMessageTableViewCell.cellReuseIdentifier())
         
         self.chattingTableView.delegate = self
@@ -114,12 +112,12 @@ class chattingView: ReusableViewFromXib, UITableViewDelegate, UITableViewDataSou
         self.incomingUserMessageSizingTableViewCell?.frame = self.frame
         self.incomingUserMessageSizingTableViewCell?.isHidden = true
         self.addSubview(self.incomingUserMessageSizingTableViewCell!)
-        /*
+        
         self.outgoingUserMessageSizingTableViewCell = OutgoingUserMessageTableViewCell.nib().instantiate(withOwner: self, options: nil)[0] as? OutgoingUserMessageTableViewCell
         self.outgoingUserMessageSizingTableViewCell?.frame = self.frame
         self.outgoingUserMessageSizingTableViewCell?.isHidden = true
         self.addSubview(self.outgoingUserMessageSizingTableViewCell!)
-        
+        /*
         self.neutralMessageSizingTableViewCell = NeutralMessageTableViewCell.nib().instantiate(withOwner: self, options: nil)[0] as? NeutralMessageTableViewCell
         self.neutralMessageSizingTableViewCell?.frame = self.frame
         self.neutralMessageSizingTableViewCell?.isHidden = true
@@ -127,16 +125,18 @@ class chattingView: ReusableViewFromXib, UITableViewDelegate, UITableViewDataSou
         */
     }
     
-    func scrollToBottom(animated: Bool, force: Bool) {
+    func scrollToBottom() {
         if self.messages.count == 0 {
             return
         }
         
-        if self.scrollLock == true && force == false {
+        if self.scrollLock == true {
             return
         }
         
-        self.chattingTableView.scrollToRow(at: IndexPath.init(row: self.messages.count - 1, section: 0), at: UITableViewScrollPosition.bottom, animated: false)
+        DispatchQueue.main.async {
+            self.chattingTableView.scrollToRow(at: IndexPath.init(row: self.messages.count - 1, section: 0), at: UITableViewScrollPosition.bottom, animated: false)
+        }
     }
     
     func scrollToPosition(position: Int) {
@@ -260,7 +260,7 @@ class chattingView: ReusableViewFromXib, UITableViewDelegate, UITableViewDataSou
         var height: CGFloat = 0
         
         let msg = self.messages[indexPath.row]
-        /*
+        
         if msg is SBDUserMessage {
             let userMessage = msg as! SBDUserMessage
             let sender = userMessage.sender
@@ -288,19 +288,7 @@ class chattingView: ReusableViewFromXib, UITableViewDelegate, UITableViewDataSou
                 height = (self.incomingUserMessageSizingTableViewCell?.getHeightOfViewCell())!
             }
         }
-        else if msg is SBDAdminMessage {
-            let adminMessage = msg as! SBDAdminMessage
-            if indexPath.row > 0 {
-                self.neutralMessageSizingTableViewCell?.setPreviousMessage(aPrevMessage: self.messages[indexPath.row - 1])
-            }
-            else {
-                self.neutralMessageSizingTableViewCell?.setPreviousMessage(aPrevMessage: nil)
-            }
-            
-            self.neutralMessageSizingTableViewCell?.setModel(aMessage: adminMessage)
-            height = (self.neutralMessageSizingTableViewCell?.getHeightOfViewCell())!
-        }
-        */
+        
         if self.messages.count > 0 && self.messages.count - 1 == indexPath.row {
             self.lastMessageHeight = height
         }
@@ -318,9 +306,7 @@ class chattingView: ReusableViewFromXib, UITableViewDelegate, UITableViewDataSou
             let sender = userMessage.sender
             
             if sender?.userId == SBDMain.getCurrentUser()?.userId {
-                
                 // Outgoing
-                /*
                 if indexPath.row > 0 {
                     self.outgoingUserMessageSizingTableViewCell?.setPreviousMessage(aPrevMessage: self.messages[indexPath.row - 1])
                 }
@@ -329,7 +315,6 @@ class chattingView: ReusableViewFromXib, UITableViewDelegate, UITableViewDataSou
                 }
                 self.outgoingUserMessageSizingTableViewCell?.setModel(aMessage: userMessage)
                 height = (self.outgoingUserMessageSizingTableViewCell?.getHeightOfViewCell())!
-                 */
             }
             else {
                 // Incoming
@@ -342,20 +327,6 @@ class chattingView: ReusableViewFromXib, UITableViewDelegate, UITableViewDataSou
                 self.incomingUserMessageSizingTableViewCell?.setModel(aMessage: userMessage)
                 height = (self.incomingUserMessageSizingTableViewCell?.getHeightOfViewCell())!
             }
-        }
-        else if msg is SBDAdminMessage {
-            let adminMessage = msg as! SBDAdminMessage
-            /*
-            if indexPath.row > 0 {
-                self.neutralMessageSizingTableViewCell?.setPreviousMessage(aPrevMessage: self.messages[indexPath.row - 1])
-            }
-            else {
-                self.neutralMessageSizingTableViewCell?.setPreviousMessage(aPrevMessage: nil)
-            }
-            
-            self.neutralMessageSizingTableViewCell?.setModel(aMessage: adminMessage)
-            height = (self.neutralMessageSizingTableViewCell?.getHeightOfViewCell())!
-            */
         }
         
         if self.messages.count > 0 && self.messages.count - 1 == indexPath.row {
@@ -393,7 +364,6 @@ class chattingView: ReusableViewFromXib, UITableViewDelegate, UITableViewDataSou
             
             if sender?.userId == SBDMain.getCurrentUser()?.userId {
                 // Outgoing
-                /*
                 cell = tableView.dequeueReusableCell(withIdentifier: OutgoingUserMessageTableViewCell.cellReuseIdentifier())
                 cell?.frame = CGRect(x: (cell?.frame.origin.x)!, y: (cell?.frame.origin.y)!, width: (cell?.frame.size.width)!, height: (cell?.frame.size.height)!)
                 if indexPath.row > 0 {
@@ -405,20 +375,11 @@ class chattingView: ReusableViewFromXib, UITableViewDelegate, UITableViewDataSou
                 (cell as! OutgoingUserMessageTableViewCell).setModel(aMessage: userMessage)
                 (cell as! OutgoingUserMessageTableViewCell).delegate = self.delegate
                 
-                if self.preSendMessages[userMessage.requestId!] != nil {
-                    (cell as! OutgoingUserMessageTableViewCell).showSendingStatus()
+                if self.resendableMessages[userMessage.requestId!] != nil {
+                    (cell as! OutgoingUserMessageTableViewCell).showMessageControlButton()
+                } else {
+                    (cell as! OutgoingUserMessageTableViewCell).hideMessageControlButton()
                 }
-                else {
-                    if self.resendableMessages[userMessage.requestId!] != nil {
-                        //                        (cell as! OutgoingUserMessageTableViewCell).showMessageControlButton()
-                        (cell as! OutgoingUserMessageTableViewCell).showFailedStatus()
-                    }
-                    else {
-                        (cell as! OutgoingUserMessageTableViewCell).showMessageDate()
-                        (cell as! OutgoingUserMessageTableViewCell).showUnreadCount()
-                    }
-                }
-                */
             }
             else {
                 // Incoming
@@ -434,23 +395,7 @@ class chattingView: ReusableViewFromXib, UITableViewDelegate, UITableViewDataSou
                 (cell as! IncomingUserMessageTableViewCell).delegate = self.delegate
             }
         }
-            /*
-        else if msg is SBDAdminMessage {
-            let adminMessage = msg as! SBDAdminMessage
-            
-            cell = tableView.dequeueReusableCell(withIdentifier: NeutralMessageTableViewCell.cellReuseIdentifier())
-            cell?.frame = CGRect(x: (cell?.frame.origin.x)!, y: (cell?.frame.origin.y)!, width: (cell?.frame.size.width)!, height: (cell?.frame.size.height)!)
-            if indexPath.row > 0 {
-                (cell as! NeutralMessageTableViewCell).setPreviousMessage(aPrevMessage: self.messages[indexPath.row - 1])
-            }
-            else {
-                (cell as! NeutralMessageTableViewCell).setPreviousMessage(aPrevMessage: nil)
-            }
-            
-            (cell as! NeutralMessageTableViewCell).setModel(aMessage: adminMessage)
-        }
-        */
-        
+
         return cell!
     }
 

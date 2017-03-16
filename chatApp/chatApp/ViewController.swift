@@ -15,12 +15,13 @@ class ViewController: UIViewController  {
     @IBOutlet weak var createButton: UIButton!
     
     var userID: String?
+    var userName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.userID = defaults.string(forKey: "userID")
-        let userName = defaults.string(forKey: "username")
+        self.userName = defaults.string(forKey: "username")
         print("read: \(self.userID) - \(userName)")
         userNameField.text = userName
         // Do any additional setup after loading the view, typically from a nib.
@@ -49,18 +50,22 @@ class ViewController: UIViewController  {
     
     @IBAction func buttonSelected(_ sender: Any) {
         if userNameField.text != "" {
-            self.userID = userNameField.text! + "-"
             
-            if let randomS = randomString(10) {
-                self.userID?.append(randomS)
+            // If the user name fields are not the same then reset the user ID
+            if (userNameField.text != self.userName) {
+                
+                self.userID = userNameField.text! + "-"
+                
+                if let randomS = randomString(10) {
+                    self.userID?.append(randomS)
+                }
+                
+                // Save the new user ID and Name
+                defaults.set(self.userID, forKey: "userID")
+                defaults.set(userNameField.text, forKey: "username")
+                defaults.synchronize()
             }
             
-            self.userID = "Allan-kYbuu4Mxad"
-        
-            defaults.set(self.userID, forKey: "userID")
-            defaults.set(userNameField.text, forKey: "username")
-            
-            defaults.synchronize()
             
             if let userid = self.userID, let username = userNameField.text {
                 

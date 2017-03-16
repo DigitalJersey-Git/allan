@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -338,42 +338,60 @@
                             <constraint firstItem="KP1-n1-VWL" firstAttribute="top" secondItem="vOE-rN-02A" secondAttribute="bottom" constant="62" id="xFL-5t-igi"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Groups" image="chatting" selectedImage="chatting" id="a1t-rb-fA5"/>
+                    <navigationItem key="navigationItem" id="dEF-9q-ImQ"/>
                     <connections>
                         <outlet property="groupTableView" destination="N3n-QM-d3u" id="ujI-B6-2cc"/>
-                        <segue destination="IdG-kZ-BG6" kind="show" identifier="chatViewController" id="JUG-hK-0ZR"/>
+                        <segue destination="IdG-kZ-BG6" kind="show" identifier="chatViewController" id="swP-pU-FlK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5KD-Bk-JBi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2015" y="134"/>
+            <point key="canvasLocation" x="3412" y="133.5832083958021"/>
         </scene>
         <!--Chat View-->
         <scene sceneID="mFw-5R-kHk">
             <objects>
-                <viewController id="IdG-kZ-BG6" userLabel="Chat View" customClass="channelChatViewController" customModule="chatApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="chatViewController" id="IdG-kZ-BG6" userLabel="Chat View" customClass="channelChatViewController" customModule="chatApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bR4-4n-Cdu"/>
-                        <viewControllerLayoutGuide type="bottom" id="ZJv-yK-Xsy"/>
+                        <viewControllerLayoutGuide type="top" id="KPW-xX-Cyx"/>
+                        <viewControllerLayoutGuide type="bottom" id="32R-KP-l0d"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="M4U-ic-9P5">
+                    <view key="view" contentMode="scaleToFill" id="llH-RJ-1WF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LpS-hd-EEY">
-                                <rect key="frame" x="0.0" y="629" width="369" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ogz-Df-5Ec">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="jr6-Pf-3t4"/>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dF5-p5-arH" customClass="chattingView" customModule="chatApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="54" width="375" height="564"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dF5-p5-arH" firstAttribute="top" secondItem="ogz-Df-5Ec" secondAttribute="bottom" constant="10" id="4Ff-ZT-uZC"/>
+                            <constraint firstItem="dF5-p5-arH" firstAttribute="trailing" secondItem="ogz-Df-5Ec" secondAttribute="trailing" id="5vA-eY-ltE"/>
+                            <constraint firstItem="dF5-p5-arH" firstAttribute="leading" secondItem="ogz-Df-5Ec" secondAttribute="leading" id="69X-TY-KSv"/>
+                            <constraint firstItem="dF5-p5-arH" firstAttribute="leading" secondItem="llH-RJ-1WF" secondAttribute="leading" id="7w4-fG-mUj"/>
+                            <constraint firstItem="dF5-p5-arH" firstAttribute="top" secondItem="llH-RJ-1WF" secondAttribute="top" constant="54" id="YOq-tx-FWv"/>
+                            <constraint firstAttribute="trailing" secondItem="dF5-p5-arH" secondAttribute="trailing" id="gQy-cn-1pm"/>
+                            <constraint firstItem="dF5-p5-arH" firstAttribute="bottom" secondItem="32R-KP-l0d" secondAttribute="top" id="vFX-Vm-EeP"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="QwO-Pt-Hnx"/>
+                    <connections>
+                        <outlet property="chattingView" destination="dF5-p5-arH" id="9yv-R8-0dR"/>
+                        <outlet property="navItem" destination="ogz-Df-5Ec" id="4yh-eh-POA"/>
+                        <outlet property="navTitle" destination="jr6-Pf-3t4" id="hZ2-Gk-5Kh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yKw-z8-PaP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2951" y="134"/>
+            <point key="canvasLocation" x="4828" y="133.5832083958021"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="91O-qg-Ugz">
@@ -385,7 +403,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="4fQ-kP-588" kind="relationship" relationship="viewControllers" id="Ufk-yx-2yk"/>
+                        <segue destination="2cK-RE-luC" kind="relationship" relationship="viewControllers" id="Ufk-yx-2yk"/>
                         <segue destination="YsL-Ub-5bB" kind="relationship" relationship="viewControllers" id="4YW-Zd-Bd3"/>
                         <segue destination="BKr-6J-lUg" kind="relationship" relationship="viewControllers" id="mt3-9S-Z7z"/>
                     </connections>
@@ -393,6 +411,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SYc-qZ-8hc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1108" y="134"/>
+        </scene>
+        <!--Groups-->
+        <scene sceneID="zYJ-hP-hDq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2cK-RE-luC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Groups" image="chatting" selectedImage="chatting" id="a1t-rb-fA5"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Sf-0h-uE5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4fQ-kP-588" kind="relationship" relationship="rootViewController" id="bAk-4O-cAO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R3e-If-BL1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2209" y="134"/>
         </scene>
     </scenes>
     <resources>

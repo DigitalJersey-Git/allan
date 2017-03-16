@@ -9,14 +9,14 @@
 /* Begin PBXBuildFile section */
 		563B68DE521D272564959168 /* Pods_chatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4DAD5174A2240EBDEA5F893 /* Pods_chatApp.framework */; };
 		9DA1D52C1E71747200FF593B /* channelChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA1D52B1E71747200FF593B /* channelChatViewController.swift */; };
-		9DA1D52E1E717FD600FF593B /* ChattingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DA1D52D1E717FD600FF593B /* ChattingView.xib */; };
+		9DA1D52E1E717FD600FF593B /* chattingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DA1D52D1E717FD600FF593B /* chattingView.xib */; };
 		9DA1D5321E71901100FF593B /* chattingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA1D5311E71901100FF593B /* chattingView.swift */; };
 		9DA1D5341E71A4E100FF593B /* IncomingUserMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA1D5331E71A4E100FF593B /* IncomingUserMessageTableViewCell.swift */; };
 		9DA1D5361E71A50E00FF593B /* IncomingUserMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DA1D5351E71A50E00FF593B /* IncomingUserMessageTableViewCell.xib */; };
 		9DA1D5381E71B52C00FF593B /* MessageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA1D5371E71B52C00FF593B /* MessageDelegate.swift */; };
 		9DB4CCCC1E61A96800116550 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB4CCCB1E61A96800116550 /* AppDelegate.swift */; };
 		9DB4CCCE1E61A96800116550 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB4CCCD1E61A96800116550 /* ViewController.swift */; };
-		9DB4CCD11E61A96800116550 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DB4CCCF1E61A96800116550 /* Main.storyboard */; };
+		9DB4CCD11E61A96800116550 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DB4CCCF1E61A96800116550 /* Main.storyboard */; settings = {ASSET_TAGS = (chatViewController, ); }; };
 		9DB4CCD31E61A96800116550 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DB4CCD21E61A96800116550 /* Assets.xcassets */; };
 		9DB4CCD61E61A96800116550 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DB4CCD41E61A96800116550 /* LaunchScreen.storyboard */; };
 		9DB4CCDF1E61A9D600116550 /* chatImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9DB4CCDE1E61A9D600116550 /* chatImg.jpg */; };
@@ -27,12 +27,14 @@
 		9DB4CCF41E66E58300116550 /* group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB4CCF31E66E58300116550 /* group.swift */; };
 		9DB4CCF81E683A0000116550 /* membersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB4CCF71E683A0000116550 /* membersCell.swift */; };
 		9DB4CCFA1E6843C700116550 /* membersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB4CCF91E6843C700116550 /* membersListViewController.swift */; };
+		9DD2FC5E1E76A9DE0050516E /* OutgoingUserMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD2FC5D1E76A9DE0050516E /* OutgoingUserMessageTableViewCell.swift */; };
+		9DD2FC621E76F3510050516E /* OutgoingUserMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DD2FC611E76F3510050516E /* OutgoingUserMessageTableViewCell.xib */; };
 		FC841EAA1E6DE9BF001E49B2 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC841EA91E6DE9BF001E49B2 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9DA1D52B1E71747200FF593B /* channelChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = channelChatViewController.swift; sourceTree = "<group>"; };
-		9DA1D52D1E717FD600FF593B /* ChattingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChattingView.xib; sourceTree = "<group>"; };
+		9DA1D52D1E717FD600FF593B /* chattingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = chattingView.xib; sourceTree = "<group>"; };
 		9DA1D5311E71901100FF593B /* chattingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chattingView.swift; sourceTree = "<group>"; };
 		9DA1D5331E71A4E100FF593B /* IncomingUserMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncomingUserMessageTableViewCell.swift; sourceTree = "<group>"; };
 		9DA1D5351E71A50E00FF593B /* IncomingUserMessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IncomingUserMessageTableViewCell.xib; sourceTree = "<group>"; };
@@ -52,6 +54,8 @@
 		9DB4CCF31E66E58300116550 /* group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = group.swift; sourceTree = "<group>"; };
 		9DB4CCF71E683A0000116550 /* membersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = membersCell.swift; sourceTree = "<group>"; };
 		9DB4CCF91E6843C700116550 /* membersListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = membersListViewController.swift; sourceTree = "<group>"; };
+		9DD2FC5D1E76A9DE0050516E /* OutgoingUserMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutgoingUserMessageTableViewCell.swift; sourceTree = "<group>"; };
+		9DD2FC611E76F3510050516E /* OutgoingUserMessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OutgoingUserMessageTableViewCell.xib; sourceTree = "<group>"; };
 		C4DAD5174A2240EBDEA5F893 /* Pods_chatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_chatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA37FD21E3F6C0243A0F3FA6 /* Pods-chatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chatApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-chatApp/Pods-chatApp.release.xcconfig"; sourceTree = "<group>"; };
 		FAD5198F4CB3E9EF89827D43 /* Pods-chatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chatApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-chatApp/Pods-chatApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -90,12 +94,14 @@
 		9DA1D52A1E71740A00FF593B /* chatChannel */ = {
 			isa = PBXGroup;
 			children = (
-				9DA1D52B1E71747200FF593B /* channelChatViewController.swift */,
-				9DA1D52D1E717FD600FF593B /* ChattingView.xib */,
-				9DA1D5311E71901100FF593B /* chattingView.swift */,
+				9DA1D5371E71B52C00FF593B /* MessageDelegate.swift */,
 				9DA1D5331E71A4E100FF593B /* IncomingUserMessageTableViewCell.swift */,
 				9DA1D5351E71A50E00FF593B /* IncomingUserMessageTableViewCell.xib */,
-				9DA1D5371E71B52C00FF593B /* MessageDelegate.swift */,
+				9DD2FC5D1E76A9DE0050516E /* OutgoingUserMessageTableViewCell.swift */,
+				9DD2FC611E76F3510050516E /* OutgoingUserMessageTableViewCell.xib */,
+				9DA1D52D1E717FD600FF593B /* chattingView.xib */,
+				9DA1D5311E71901100FF593B /* chattingView.swift */,
+				9DA1D52B1E71747200FF593B /* channelChatViewController.swift */,
 			);
 			name = chatChannel;
 			sourceTree = "<group>";
@@ -202,6 +208,9 @@
 		9DB4CCC01E61A96800116550 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					chatViewController,
+				);
 				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Mugla Kitty";
@@ -235,7 +244,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DA1D52E1E717FD600FF593B /* ChattingView.xib in Resources */,
+				9DD2FC621E76F3510050516E /* OutgoingUserMessageTableViewCell.xib in Resources */,
+				9DA1D52E1E717FD600FF593B /* chattingView.xib in Resources */,
 				9DA1D5361E71A50E00FF593B /* IncomingUserMessageTableViewCell.xib in Resources */,
 				9DB4CCD61E61A96800116550 /* LaunchScreen.storyboard in Resources */,
 				9DB4CCE31E61AAD600116550 /* button.jpg in Resources */,
@@ -302,6 +312,7 @@
 			files = (
 				9DA1D5341E71A4E100FF593B /* IncomingUserMessageTableViewCell.swift in Sources */,
 				9DB4CCFA1E6843C700116550 /* membersListViewController.swift in Sources */,
+				9DD2FC5E1E76A9DE0050516E /* OutgoingUserMessageTableViewCell.swift in Sources */,
 				9DB4CCE51E61AD2200116550 /* global.swift in Sources */,
 				9DA1D52C1E71747200FF593B /* channelChatViewController.swift in Sources */,
 				9DB4CCF41E66E58300116550 /* group.swift in Sources */,
