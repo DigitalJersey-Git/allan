@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		563B68DE521D272564959168 /* Pods_chatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4DAD5174A2240EBDEA5F893 /* Pods_chatApp.framework */; };
+		9D0D78071E8416770001EF74 /* createChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0D78061E8416770001EF74 /* createChannelViewController.swift */; };
 		9DA1D52C1E71747200FF593B /* channelChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA1D52B1E71747200FF593B /* channelChatViewController.swift */; };
 		9DA1D52E1E717FD600FF593B /* chattingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DA1D52D1E717FD600FF593B /* chattingView.xib */; };
 		9DA1D5321E71901100FF593B /* chattingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA1D5311E71901100FF593B /* chattingView.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D0D78061E8416770001EF74 /* createChannelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = createChannelViewController.swift; sourceTree = "<group>"; };
 		9DA1D52B1E71747200FF593B /* channelChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = channelChatViewController.swift; sourceTree = "<group>"; };
 		9DA1D52D1E717FD600FF593B /* chattingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = chattingView.xib; sourceTree = "<group>"; };
 		9DA1D5311E71901100FF593B /* chattingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chattingView.swift; sourceTree = "<group>"; };
@@ -91,6 +93,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9D0D78051E8416420001EF74 /* CreateChannel */ = {
+			isa = PBXGroup;
+			children = (
+				9D0D78061E8416770001EF74 /* createChannelViewController.swift */,
+			);
+			name = CreateChannel;
+			sourceTree = "<group>";
+		};
 		9DA1D52A1E71740A00FF593B /* chatChannel */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +137,7 @@
 		9DB4CCCA1E61A96800116550 /* chatApp */ = {
 			isa = PBXGroup;
 			children = (
+				9D0D78051E8416420001EF74 /* CreateChannel */,
 				9DA1D52A1E71740A00FF593B /* chatChannel */,
 				9DB4CCF61E6839D700116550 /* members */,
 				9DB4CCF51E6839C600116550 /* groups */,
@@ -317,6 +328,7 @@
 				9DA1D52C1E71747200FF593B /* channelChatViewController.swift in Sources */,
 				9DB4CCF41E66E58300116550 /* group.swift in Sources */,
 				FC841EAA1E6DE9BF001E49B2 /* TabBarController.swift in Sources */,
+				9D0D78071E8416770001EF74 /* createChannelViewController.swift in Sources */,
 				9DB4CCCE1E61A96800116550 /* ViewController.swift in Sources */,
 				9DA1D5321E71901100FF593B /* chattingView.swift in Sources */,
 				9DB4CCCC1E61A96800116550 /* AppDelegate.swift in Sources */,

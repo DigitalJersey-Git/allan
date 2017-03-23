@@ -15,7 +15,7 @@ class groupCell: UITableViewCell {
     @IBOutlet weak var groupImage: UIImageView!
     @IBOutlet weak var groupParicapantCnt: UILabel!
     
-    private var channel: SBDOpenChannel!
+    private var channel: SBDBaseChannel!
     
     var group: Group! {
         didSet {
@@ -28,11 +28,14 @@ class groupCell: UITableViewCell {
         return UIImage(named: "chatimg")
     }
     
-    func setCellInfo(aChannel: SBDOpenChannel) {
+    func setCellInfo(aChannel: SBDBaseChannel) {
         self.channel = aChannel
         
         self.groupName.text = self.channel.name
-        self.groupParicapantCnt.text = String(self.channel.participantCount) + " Participant" + String((self.channel.participantCount <= 1) ? "" : "s")
+        
+        if let openChannl = self.channel as? SBDOpenChannel {
+            self.groupParicapantCnt.text = String(openChannl.participantCount) + " Participant" + String((openChannl.participantCount <= 1) ? "" : "s")
+        }
     }
     
     override func awakeFromNib() {

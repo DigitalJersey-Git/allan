@@ -10,15 +10,15 @@ import UIKit
 import SendBirdSDK
 
 protocol protoCurrentChannel: class {
-    func setCurrentChannel(currentChannel: SBDOpenChannel)
+    func setCurrentChannel(currentChannel: SBDBaseChannel)
 }
 
-class groupListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class groupListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CreateGroupChannelSelectOptionViewControllerDelegate {
     
     @IBOutlet weak var groupTableView: UITableView!
     
-    private var channels: [SBDOpenChannel] = []
-    private var selectedChannel: SBDOpenChannel?
+    private var channels: [SBDBaseChannel] = []
+    private var selectedChannel: SBDBaseChannel?
     
     
     weak var delegate:protoCurrentChannel?
@@ -51,31 +51,48 @@ class groupListViewController: UIViewController, UITableViewDelegate, UITableVie
                 self.channels.append(channel)
             }
             
-            DispatchQueue.main.async {
-                self.groupTableView.reloadData()
-                if let channel = self.channels.first {
-                    self.delegate?.setCurrentChannel(currentChannel: channel)
+            let grpquery: SBDGroupChannelListQuery? = SBDGroupChannel.createMyGroupChannelListQuery()!
+            grpquery?.includeEmptyChannel = true
+            grpquery?.loadNextPage(completionHandler: { (channels, error) in
+                if (error != nil) {
+                    return;
                 }
-            }
-            // ...
+                
+                for channel in channels! {
+                    self.channels.append(channel)
+                }
+                
+                DispatchQueue.main.async {
+                    self.groupTableView.reloadData()
+                    if let channel = self.channels.first {
+                        self.delegate?.setCurrentChannel(currentChannel: channel)
+                    }
+                }
+            })
+            
         })
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
+        
         delegate?.setCurrentChannel(currentChannel: self.channels[indexPath.row])
         
-        self.channels[indexPath.row].enter { (error) in
-            if error != nil {
-                print("Error: \(error!)")
-                return
-            }
-            
-            DispatchQueue.main.async {
-                self.performSegue(withIdentifier: "chatViewController", sender: self)
+        // update self
+        self.selectedChannel = self.channels[indexPath.row]
+        
+        // users only need to enter into OPEN CHANNELS
+        if let openChannl = self.channels[indexPath.row] as? SBDOpenChannel {
+            openChannl.enter { (error) in
+                if error != nil {
+                    return
+                }
             }
         }
-        
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "chatView", sender: self)
+        }
+
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -90,6 +107,7 @@ class groupListViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath)
         
+        
         (cell as! groupCell).setCellInfo(aChannel: self.channels[indexPath.row])
         selectedChannel = self.channels[indexPath.row]
         
@@ -97,14 +115,24 @@ class groupListViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     
+    // MARK: CreateGroupChannelSelectOptionViewControllerDelegate
+    func didFinishCreating(channel: SBDGroupChannel, vc: UIViewController) {
+        //self.dismiss(animated: false) {
+            //if self.delegate != nil {
+                //self.delegate?.openGroupChannel(channel: channel, vc: self)
+            //}
+        //}
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        print("The SEGUE : \(segue.identifier)")
         
-        if segue.identifier == "chatViewController" {
+        if segue.identifier == "chatView" {
             let controller = segue.destination as! channelChatViewController
             controller.channel = selectedChannel
         }

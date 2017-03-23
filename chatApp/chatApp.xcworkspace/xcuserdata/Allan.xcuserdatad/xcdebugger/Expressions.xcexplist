@@ -3,6 +3,20 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "channelChatViewController.viewDidLoad() -&gt; ():channelChatViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.tabBarController?.navigationItem.title">
+            </PersistentString>
+            <PersistentString
+               value = "self.tabBarController">
+            </PersistentString>
+            <PersistentString
+               value = "self.tabBarController?.navigationItem">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "chattingView.tableView(UITableView, cellForRowAt : IndexPath) -&gt; UITableViewCell:chattingView.swift">
          <PersistentStrings>
             <PersistentString

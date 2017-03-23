@@ -10,7 +10,7 @@ import UIKit
 import SendBirdSDK
 
 class channelChatViewController: UIViewController, SBDConnectionDelegate, SBDChannelDelegate, ChattingViewDelegate, MessageDelegate {
-    var channel: SBDOpenChannel!
+    var channel: SBDBaseChannel!
 
     @IBOutlet weak var navItem: UINavigationBar!
     @IBOutlet weak var navTitle: UINavigationItem!
@@ -25,24 +25,16 @@ class channelChatViewController: UIViewController, SBDConnectionDelegate, SBDCha
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let titleView: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width - 100, height: 64))
         
-        var mainTitleAttribute: [String:AnyObject]?
+        var title: String? = ""
         
-        mainTitleAttribute = [ NSForegroundColorAttributeName: UIColor.black ]
-        var fullTitle: NSMutableAttributedString?
-        let title = String(format: "%@(%ld)", self.channel.name, self.channel.participantCount)
-        fullTitle = NSMutableAttributedString(string: title)
-        fullTitle?.addAttributes(mainTitleAttribute!, range: NSMakeRange(0, title.characters.count))
+        if let openChannel = self.channel as? SBDOpenChannel {
+            title = String(format: "%@(%ld)", self.channel.name, openChannel.participantCount)
+        } else {
+            title = String(format: "%@", self.channel.name)
+        }
         
-        titleView.attributedText = fullTitle
-        titleView.numberOfLines = 2
-        titleView.textAlignment = NSTextAlignment.center
-        // Do any additional setup after loading the view.
-        
-        self.navTitle.titleView = titleView
-        
+        self.title = title
         
         SBDMain.add(self as SBDChannelDelegate, identifier: self.description)
         SBDMain.add(self as SBDConnectionDelegate, identifier: self.description)

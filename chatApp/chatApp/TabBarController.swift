@@ -35,14 +35,14 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate, protoCur
         // Dispose of any resources that can be recreated.
     }
     
-    func setCurrentChannel(currentChannel: SBDOpenChannel) {
-        self.channel = currentChannel
+    func setCurrentChannel(currentChannel: SBDBaseChannel) {
+        let derived = currentChannel as! SBDOpenChannel
+        self.channel = derived
     }
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         if let view = viewController as? membersListViewController {
             view.channel = self.channel
-            view.loadData()
         }
     }
     
@@ -57,7 +57,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate, protoCur
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print(segue.identifier)
+        print("\(segue.identifier)")
         
         if segue.identifier == "signInSegue" {
             if let nextViewController = segue.destination as? groupListViewController {
