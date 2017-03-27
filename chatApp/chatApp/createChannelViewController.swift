@@ -15,6 +15,7 @@ protocol CreateGroupChannelSelectOptionViewControllerDelegate: class {
 
 class createChannelViewController: UIViewController {
     weak var delegate: CreateGroupChannelSelectOptionViewControllerDelegate?
+    
     @IBOutlet weak var groupName: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var cancel: UIButton!
@@ -38,34 +39,44 @@ class createChannelViewController: UIViewController {
         
         SBDGroupChannel.createChannel(withName: self.groupName.text, users: self.selectedUser, coverUrl: nil, data: nil, completionHandler: { (channel, error) in
             if error != nil {
-                let vc = UIAlertController(title: "Error", message: error?.domain, preferredStyle: UIAlertControllerStyle.alert)
-                let closeAction = UIAlertAction(title: "CloseButton", style: UIAlertActionStyle.cancel, handler: { (action) in
-                    
-                })
-                vc.addAction(closeAction)
-                DispatchQueue.main.async {
-                    self.present(vc, animated: true, completion: nil)
-                }
                 
-                self.activityIndicator.stopAnimating()
+                DispatchQueue.main.async {
+                    
+                    let vc = UIAlertController(title: "Error", message: error.debugDescription, preferredStyle: UIAlertControllerStyle.alert)
+                    let closeAction = UIAlertAction(title: "CloseButton", style: UIAlertActionStyle.cancel, handler: { (action) in
+                        
+                    })
+                    vc.addAction(closeAction)
+                    DispatchQueue.main.async {
+                        self.present(vc, animated: true, completion: nil)
+                    }
+                    
+                    self.activityIndicator.stopAnimating()
+                }
                 
                 return
             }
             
-            let vc = UIAlertController(title: "GroupChannel \(self.groupName.text) Created", message: "You have just created a new group now you will need to add new members to it.", preferredStyle: UIAlertControllerStyle.alert)
-            let closeAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.cancel, handler: { (action) in
-                self.dismiss(animated: false, completion: {
-                    if self.delegate != nil {
-                        self.delegate?.didFinishCreating(channel: channel!, vc: self)
-                    }
-                })
-            })
-            vc.addAction(closeAction)
-            self.present(vc, animated: true, completion: {
+            DispatchQueue.main.async {
+                let vc = UIAlertController(title: "GroupChannel \(self.groupName.text) Created", message: "You have just created a new group now you will need to add new members to it.", preferredStyle: UIAlertControllerStyle.alert)
                 
-            })
+                let closeAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.cancel, handler: { (action) in
+                    
+                        self.dismiss(animated: false, completion: {
+                            if self.delegate != nil {
+                                self.delegate?.didFinishCreating(channel: channel!, vc: self)
+                            }
+                        })
+                    })
             
-            self.activityIndicator.stopAnimating()
+                    vc.addAction(closeAction)
+                    self.present(vc, animated: true, completion: {
+                        
+                    })
+                
+            }
+            
+            //self.activityIndicator.stopAnimating()
         })
     }
     

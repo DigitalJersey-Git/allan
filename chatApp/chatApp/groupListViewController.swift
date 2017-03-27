@@ -38,7 +38,7 @@ class groupListViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func createOpenChannel() {
         let query = SBDOpenChannel.createOpenChannelListQuery()
-        query?.limit = 2
+        query?.limit = 50
         
         query?.loadNextPage(completionHandler: {[unowned self]
             (channels, error) in
@@ -61,6 +61,11 @@ class groupListViewController: UIViewController, UITableViewDelegate, UITableVie
                 for channel in channels! {
                     self.channels.append(channel)
                 }
+                
+                for channel in self.channels {
+                    print("channel \(channel)")
+                }
+                
                 
                 DispatchQueue.main.async {
                     self.groupTableView.reloadData()
@@ -117,11 +122,12 @@ class groupListViewController: UIViewController, UITableViewDelegate, UITableVie
     
     // MARK: CreateGroupChannelSelectOptionViewControllerDelegate
     func didFinishCreating(channel: SBDGroupChannel, vc: UIViewController) {
-        //self.dismiss(animated: false) {
-            //if self.delegate != nil {
-                //self.delegate?.openGroupChannel(channel: channel, vc: self)
-            //}
-        //}
+        self.channels.append(channel)
+        
+        self.groupTableView.reloadData()
+        if let channel = self.channels.last {
+            self.delegate?.setCurrentChannel(currentChannel: channel)
+        }
     }
     
     // MARK: - Navigation
