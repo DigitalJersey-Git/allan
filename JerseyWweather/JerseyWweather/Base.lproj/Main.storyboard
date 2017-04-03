@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="JerseyWweather" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="panda.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="LiF-WI-WhP">
+                                <rect key="frame" x="48.5" y="57" width="278" height="181"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="LiF-WI-WhP" secondAttribute="height" multiplier="278:181" id="AZl-Qs-t0J"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkX-bj-RQj">
+                                <rect key="frame" x="16" y="13" width="343" height="21"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Jersey">
+                                        <attributes>
+                                            <color key="NSColor" red="0.26671630480782016" green="1" blue="0.43074877966555192" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Weather">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="0.38291868144060059" blue="0.16593905698286082" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Information">
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="Times-Roman"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WbA-rn-All" userLabel="ContainerView">
+                                <rect key="frame" x="-8.5" y="470" width="392" height="97"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Nr-ce-969">
+                                        <rect key="frame" x="196" y="33" width="100" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="bUa-t0-jZS"/>
+                                            <constraint firstAttribute="width" constant="100" id="bYI-vi-tkp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <state key="normal" title="Jersey">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4i1-dS-4Zx">
+                                        <rect key="frame" x="70" y="33" width="100" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.1088559524167132" blue="0.053590578708814229" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Uwg-H8-aI3"/>
+                                            <constraint firstAttribute="width" constant="100" id="bPs-aD-R7A"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Guernsey">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.20033024739999999" blue="0.34519102959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="4i1-dS-4Zx" firstAttribute="leading" secondItem="WbA-rn-All" secondAttribute="leading" constant="70" id="CsE-iH-tCU"/>
+                                    <constraint firstAttribute="width" constant="392" id="Eu3-GG-eln"/>
+                                    <constraint firstItem="4i1-dS-4Zx" firstAttribute="centerY" secondItem="WbA-rn-All" secondAttribute="centerY" id="SnZ-Vm-L8k"/>
+                                    <constraint firstItem="3Nr-ce-969" firstAttribute="leading" secondItem="4i1-dS-4Zx" secondAttribute="trailing" constant="26" id="TR6-1n-jP1"/>
+                                    <constraint firstItem="4i1-dS-4Zx" firstAttribute="top" secondItem="3Nr-ce-969" secondAttribute="top" id="jn5-7K-BXX"/>
+                                    <constraint firstAttribute="height" constant="97" id="qxu-NZ-GGa"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LiF-WI-WhP" secondAttribute="bottom" constant="429" id="DuU-Uk-sn8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qkX-bj-RQj" secondAttribute="trailing" id="EQ7-TU-YbB"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WbA-rn-All" secondAttribute="bottom" constant="100" id="P7C-hO-G8S"/>
+                            <constraint firstItem="LiF-WI-WhP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="37" id="cQx-Yu-Guv"/>
+                            <constraint firstItem="qkX-bj-RQj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="13" id="eOT-Ji-Jzq"/>
+                            <constraint firstItem="LiF-WI-WhP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nue-kw-usj"/>
+                            <constraint firstItem="WbA-rn-All" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s1p-5I-g94"/>
+                            <constraint firstItem="qkX-bj-RQj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="upW-2g-Wjz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="GuernseyClick" destination="4i1-dS-4Zx" id="BJf-Qw-ZER"/>
+                        <outlet property="JerseyClick" destination="3Nr-ce-969" id="OjC-ep-O7z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-15.625" y="36.9140625"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="panda.jpeg" width="278" height="181"/>
+    </resources>
+</document>
