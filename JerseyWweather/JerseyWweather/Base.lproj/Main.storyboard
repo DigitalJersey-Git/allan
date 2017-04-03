@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,17 +19,14 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="panda.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="LiF-WI-WhP">
-                                <rect key="frame" x="48.5" y="57" width="278" height="181"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="LiF-WI-WhP" secondAttribute="height" multiplier="278:181" id="AZl-Qs-t0J"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="images.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="YSe-2L-aSC">
+                                <rect key="frame" x="20" y="20" width="374" height="716"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkX-bj-RQj">
-                                <rect key="frame" x="16" y="13" width="343" height="21"/>
+                                <rect key="frame" x="20" y="13" width="374" height="21"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Jersey">
                                         <attributes>
@@ -68,7 +64,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WbA-rn-All" userLabel="ContainerView">
-                                <rect key="frame" x="-8.5" y="470" width="392" height="97"/>
+                                <rect key="frame" x="11" y="539" width="392" height="97"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Nr-ce-969">
                                         <rect key="frame" x="196" y="33" width="100" height="30"/>
@@ -95,7 +91,6 @@
                                         </state>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.20033024739999999" blue="0.34519102959999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="4i1-dS-4Zx" firstAttribute="leading" secondItem="WbA-rn-All" secondAttribute="leading" constant="70" id="CsE-iH-tCU"/>
                                     <constraint firstAttribute="width" constant="392" id="Eu3-GG-eln"/>
@@ -105,17 +100,23 @@
                                     <constraint firstAttribute="height" constant="97" id="qxu-NZ-GGa"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconmonstr-weather-8-240.png" translatesAutoresizingMaskIntoConstraints="NO" id="LiF-WI-WhP">
+                                <rect key="frame" x="87" y="95" width="240" height="240"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LiF-WI-WhP" secondAttribute="bottom" constant="429" id="DuU-Uk-sn8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YSe-2L-aSC" secondAttribute="trailing" id="DWA-TX-fBc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qkX-bj-RQj" secondAttribute="trailing" id="EQ7-TU-YbB"/>
+                            <constraint firstItem="LiF-WI-WhP" firstAttribute="top" secondItem="qkX-bj-RQj" secondAttribute="bottom" constant="61" id="Oma-vr-U7t"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WbA-rn-All" secondAttribute="bottom" constant="100" id="P7C-hO-G8S"/>
-                            <constraint firstItem="LiF-WI-WhP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="37" id="cQx-Yu-Guv"/>
                             <constraint firstItem="qkX-bj-RQj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="13" id="eOT-Ji-Jzq"/>
+                            <constraint firstItem="YSe-2L-aSC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gzK-Y7-D8t"/>
                             <constraint firstItem="LiF-WI-WhP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nue-kw-usj"/>
+                            <constraint firstItem="YSe-2L-aSC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ruh-FL-dkW"/>
                             <constraint firstItem="WbA-rn-All" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s1p-5I-g94"/>
                             <constraint firstItem="qkX-bj-RQj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="upW-2g-Wjz"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="YSe-2L-aSC" secondAttribute="bottom" id="vZY-wD-ZjN"/>
                         </constraints>
                     </view>
                     <connections>
@@ -125,10 +126,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15.625" y="36.9140625"/>
+            <point key="canvasLocation" x="-15.942028985507248" y="36.684782608695656"/>
         </scene>
     </scenes>
     <resources>
-        <image name="panda.jpeg" width="278" height="181"/>
+        <image name="iconmonstr-weather-8-240.png" width="240" height="240"/>
+        <image name="images.jpeg" width="168" height="299"/>
     </resources>
 </document>
