@@ -20,13 +20,19 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate, protoCur
 
         // Do any additional setup after loading the view.
         if let viewlist = self.viewControllers {
+            
             for view in viewlist {
+                
                 //if view is groupListViewController {
                 if let dest = view as? groupListViewController {
+                    
                     // 2. Set self as a value to delegate
                     dest.delegate = self
+                    
                 }
             }
+            
+            
         }
     }
 
