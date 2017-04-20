@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9DAF29CB1EA90F6100F1A233 /* backgrnd1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9DAF29CA1EA90F6100F1A233 /* backgrnd1.jpg */; };
 		FCB0FFF71E92BB5F00EE12D6 /* images.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = FCB0FFF61E92BB5F00EE12D6 /* images.jpeg */; };
 		FCB0FFF91E92BE8100EE12D6 /* iconmonstr-weather-8-240.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB0FFF81E92BE8100EE12D6 /* iconmonstr-weather-8-240.png */; };
 		FCB0FFFC1E92C6F800EE12D6 /* islandweather.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0FFFB1E92C6F800EE12D6 /* islandweather.swift */; };
@@ -16,11 +17,11 @@
 		FCD028EE1E8D75C800CB3347 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCD028EC1E8D75C800CB3347 /* Main.storyboard */; };
 		FCD028F01E8D75C800CB3347 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCD028EF1E8D75C800CB3347 /* Assets.xcassets */; };
 		FCD028F31E8D75C800CB3347 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCD028F11E8D75C800CB3347 /* LaunchScreen.storyboard */; };
-		FCD028FB1E8D77B800CB3347 /* panda.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = FCD028FA1E8D77B800CB3347 /* panda.jpeg */; };
 		FCF132D21E96AFDA0023F5CF /* background.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = FCF132D11E96AFDA0023F5CF /* background.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9DAF29CA1EA90F6100F1A233 /* backgrnd1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = backgrnd1.jpg; path = ../../backgrnd1.jpg; sourceTree = "<group>"; };
 		FCB0FFF61E92BB5F00EE12D6 /* images.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = images.jpeg; sourceTree = "<group>"; };
 		FCB0FFF81E92BE8100EE12D6 /* iconmonstr-weather-8-240.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconmonstr-weather-8-240.png"; sourceTree = "<group>"; };
 		FCB0FFFB1E92C6F800EE12D6 /* islandweather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = islandweather.swift; sourceTree = "<group>"; };
@@ -32,7 +33,6 @@
 		FCD028EF1E8D75C800CB3347 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCD028F21E8D75C800CB3347 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FCD028F41E8D75C800CB3347 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FCD028FA1E8D77B800CB3347 /* panda.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = panda.jpeg; sourceTree = "<group>"; };
 		FCF132D11E96AFDA0023F5CF /* background.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,11 +74,11 @@
 		FCD028E71E8D75C800CB3347 /* JerseyWweather */ = {
 			isa = PBXGroup;
 			children = (
+				FCB0FFF81E92BE8100EE12D6 /* iconmonstr-weather-8-240.png */,
+				9DAF29CA1EA90F6100F1A233 /* backgrnd1.jpg */,
+				FCB0FFF61E92BB5F00EE12D6 /* images.jpeg */,
 				FCF132D11E96AFDA0023F5CF /* background.jpeg */,
 				FCB0FFFA1E92C65C00EE12D6 /* islandweather */,
-				FCB0FFF81E92BE8100EE12D6 /* iconmonstr-weather-8-240.png */,
-				FCB0FFF61E92BB5F00EE12D6 /* images.jpeg */,
-				FCD028FA1E8D77B800CB3347 /* panda.jpeg */,
 				FCD028E81E8D75C800CB3347 /* AppDelegate.swift */,
 				FCD028EA1E8D75C800CB3347 /* ViewController.swift */,
 				FCD028EC1E8D75C800CB3347 /* Main.storyboard */,
@@ -150,7 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCF132D21E96AFDA0023F5CF /* background.jpeg in Resources */,
-				FCD028FB1E8D77B800CB3347 /* panda.jpeg in Resources */,
+				9DAF29CB1EA90F6100F1A233 /* backgrnd1.jpg in Resources */,
 				FCB0FFF71E92BB5F00EE12D6 /* images.jpeg in Resources */,
 				FCB0FFF91E92BE8100EE12D6 /* iconmonstr-weather-8-240.png in Resources */,
 				FCC89CD21E9FECFF00C88E87 /* jerseymet.xml in Resources */,
