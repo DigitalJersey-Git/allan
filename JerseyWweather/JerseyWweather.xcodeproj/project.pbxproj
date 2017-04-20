@@ -10,6 +10,7 @@
 		FCB0FFF71E92BB5F00EE12D6 /* images.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = FCB0FFF61E92BB5F00EE12D6 /* images.jpeg */; };
 		FCB0FFF91E92BE8100EE12D6 /* iconmonstr-weather-8-240.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB0FFF81E92BE8100EE12D6 /* iconmonstr-weather-8-240.png */; };
 		FCB0FFFC1E92C6F800EE12D6 /* islandweather.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0FFFB1E92C6F800EE12D6 /* islandweather.swift */; };
+		FCC89CD21E9FECFF00C88E87 /* jerseymet.xml in Resources */ = {isa = PBXBuildFile; fileRef = FCC89CD11E9FECFF00C88E87 /* jerseymet.xml */; };
 		FCD028E91E8D75C800CB3347 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD028E81E8D75C800CB3347 /* AppDelegate.swift */; };
 		FCD028EB1E8D75C800CB3347 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD028EA1E8D75C800CB3347 /* ViewController.swift */; };
 		FCD028EE1E8D75C800CB3347 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCD028EC1E8D75C800CB3347 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 		FCB0FFF61E92BB5F00EE12D6 /* images.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = images.jpeg; sourceTree = "<group>"; };
 		FCB0FFF81E92BE8100EE12D6 /* iconmonstr-weather-8-240.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconmonstr-weather-8-240.png"; sourceTree = "<group>"; };
 		FCB0FFFB1E92C6F800EE12D6 /* islandweather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = islandweather.swift; sourceTree = "<group>"; };
+		FCC89CD11E9FECFF00C88E87 /* jerseymet.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = jerseymet.xml; sourceTree = "<group>"; };
 		FCD028E51E8D75C800CB3347 /* JerseyWweather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JerseyWweather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCD028E81E8D75C800CB3347 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCD028EA1E8D75C800CB3347 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				FCD028EF1E8D75C800CB3347 /* Assets.xcassets */,
 				FCD028F11E8D75C800CB3347 /* LaunchScreen.storyboard */,
 				FCD028F41E8D75C800CB3347 /* Info.plist */,
+				FCC89CD11E9FECFF00C88E87 /* jerseymet.xml */,
 			);
 			path = JerseyWweather;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 				FCD028FB1E8D77B800CB3347 /* panda.jpeg in Resources */,
 				FCB0FFF71E92BB5F00EE12D6 /* images.jpeg in Resources */,
 				FCB0FFF91E92BE8100EE12D6 /* iconmonstr-weather-8-240.png in Resources */,
+				FCC89CD21E9FECFF00C88E87 /* jerseymet.xml in Resources */,
 				FCD028F31E8D75C800CB3347 /* LaunchScreen.storyboard in Resources */,
 				FCD028F01E8D75C800CB3347 /* Assets.xcassets in Resources */,
 				FCD028EE1E8D75C800CB3347 /* Main.storyboard in Resources */,

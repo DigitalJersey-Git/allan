@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<CoastalReports time="7am" date="04 April 2017">
+<title>Weather Reports for Coastal Stations</title>
+<StationReport Name="Jersey Airport">
+  <Wind>NW4</Wind>
+  <Gust />
+  <Visibility>11NM</Visibility>
+  <Weather>Cloudy</Weather>
+  <Pressure>1024</Pressure>
+  <Tendency>RS</Tendency>
+</StationReport>
+<StationReport Name="Guernsey Airport">
+  <Wind>WNW3</Wind>
+  <Gust />
+  <Visibility>11NM</Visibility>
+  <Weather>Cloudy</Weather>
+  <Pressure>1024</Pressure>
+  <Tendency>RS</Tendency>
+</StationReport>
+<StationReport Name="Alderney Airport">
+  <Wind>WNW4</Wind>
+  <Gust />
+  <Visibility>5+NM</Visibility>
+  <Weather>Cloudy</Weather>
+  <Pressure>1024</Pressure>
+  <Tendency />
+</StationReport>
+<StationReport Name="Cap de la Hague">
+  <Wind>WNW4</Wind>
+  <Gust />
+  <Visibility>8NM</Visibility>
+  <Weather>Rain</Weather>
+  <Pressure>1024</Pressure>
+  <Tendency>RS</Tendency>
+</StationReport>
+<StationReport Name="Cherbourg Airport">
+  <Wind>S2</Wind>
+  <Gust />
+  <Visibility>2NM</Visibility>
+  <Weather>Mist</Weather>
+  <Pressure>1024</Pressure>
+  <Tendency>FS</Tendency>
+</StationReport>
+<StationReport Name="Dinard Airport">
+  <Wind>SW2</Wind>
+  <Gust />
+  <Visibility>3NM</Visibility>
+  <Weather>Cloudy</Weather>
+  <Pressure>1025</Pressure>
+  <Tendency>FS</Tendency>
+</StationReport>
+<StationReport Name="Portland">
+  <Wind>WNW4</Wind>
+  <Gust />
+  <Visibility>7NM</Visibility>
+  <Weather>Cloudy</Weather>
+  <Pressure>1023</Pressure>
+  <Tendency>RS</Tendency>
+</StationReport>
+<StationReport Name="Channel Light Auto">
+  <Wind>N/A F4</Wind>
+  <Gust>25</Gust>
+  <Visibility>N/A</Visibility>
+  <Weather>N/A</Weather>
+  <Pressure>1024</Pressure>
+  <Tendency>RS</Tendency>
+</StationReport>
+</CoastalReports>
