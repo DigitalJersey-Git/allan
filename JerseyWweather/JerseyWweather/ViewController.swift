@@ -18,8 +18,6 @@ class weatherStation: NSObject {
     
     override init() {
         super.init()
-        
-        
     }
 }
 
@@ -37,7 +35,7 @@ class ViewController: UIViewController, XMLParserDelegate  {
     @IBAction func weatherLocBPush(_ sender: Any) {
         let Btn = sender as! UIButton
         self.setSelectedIs(sender: Btn)
-        self.performSegue(withIdentifier: "stationListingSegue", sender: self)
+        self.performSegue(withIdentifier: "stationListSegue", sender: self)
     }
     
     @IBAction func myLocationBPush(_ sender: Any) {
@@ -126,10 +124,17 @@ class ViewController: UIViewController, XMLParserDelegate  {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
-        if segue.identifier == "islandweatherSegue" {
-            if let nextController = segue.destination as? islandweather {
-                nextController.selectedIsland = self.selectedIsland
-            }
+        switch segue.identifier! {
+            case "islandweatherSegue":
+                if let nextController = segue.destination as? islandweather {
+                    //nextController.selectedIsland = self.selectedIsland
+                }
+            case "stationListSegue":
+                if let nextController = segue.destination as? stationListView {
+                    nextController.weatherStations = self.weatherReports as NSObject
+                }
+            default:
+                return
         }
     }
 }

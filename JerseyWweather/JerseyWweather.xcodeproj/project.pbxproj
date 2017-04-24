@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9DAF29CB1EA90F6100F1A233 /* backgrnd1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9DAF29CA1EA90F6100F1A233 /* backgrnd1.jpg */; };
+		FC58E3311EA930360094B7D9 /* stationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC58E3301EA930360094B7D9 /* stationListView.swift */; };
+		FC58E3331EA930750094B7D9 /* stationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC58E3321EA930750094B7D9 /* stationCell.xib */; };
+		FC58E3351EA935BF0094B7D9 /* stationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC58E3341EA935BF0094B7D9 /* stationCell.swift */; };
 		FCB0FFF71E92BB5F00EE12D6 /* images.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = FCB0FFF61E92BB5F00EE12D6 /* images.jpeg */; };
 		FCB0FFF91E92BE8100EE12D6 /* iconmonstr-weather-8-240.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB0FFF81E92BE8100EE12D6 /* iconmonstr-weather-8-240.png */; };
 		FCB0FFFC1E92C6F800EE12D6 /* islandweather.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB0FFFB1E92C6F800EE12D6 /* islandweather.swift */; };
@@ -22,6 +25,9 @@
 
 /* Begin PBXFileReference section */
 		9DAF29CA1EA90F6100F1A233 /* backgrnd1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = backgrnd1.jpg; path = ../../backgrnd1.jpg; sourceTree = "<group>"; };
+		FC58E3301EA930360094B7D9 /* stationListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = stationListView.swift; sourceTree = "<group>"; };
+		FC58E3321EA930750094B7D9 /* stationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = stationCell.xib; sourceTree = "<group>"; };
+		FC58E3341EA935BF0094B7D9 /* stationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = stationCell.swift; sourceTree = "<group>"; };
 		FCB0FFF61E92BB5F00EE12D6 /* images.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = images.jpeg; sourceTree = "<group>"; };
 		FCB0FFF81E92BE8100EE12D6 /* iconmonstr-weather-8-240.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconmonstr-weather-8-240.png"; sourceTree = "<group>"; };
 		FCB0FFFB1E92C6F800EE12D6 /* islandweather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = islandweather.swift; sourceTree = "<group>"; };
@@ -47,12 +53,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FCB0FFFA1E92C65C00EE12D6 /* islandweather */ = {
+		FC58E3361EA936070094B7D9 /* stationCell */ = {
 			isa = PBXGroup;
 			children = (
-				FCB0FFFB1E92C6F800EE12D6 /* islandweather.swift */,
+				FC58E3301EA930360094B7D9 /* stationListView.swift */,
+				FC58E3321EA930750094B7D9 /* stationCell.xib */,
+				FC58E3341EA935BF0094B7D9 /* stationCell.swift */,
 			);
-			name = islandweather;
+			name = stationCell;
 			sourceTree = "<group>";
 		};
 		FCD028DC1E8D75C700CB3347 = {
@@ -74,11 +82,12 @@
 		FCD028E71E8D75C800CB3347 /* JerseyWweather */ = {
 			isa = PBXGroup;
 			children = (
+				FC58E3361EA936070094B7D9 /* stationCell */,
 				FCB0FFF81E92BE8100EE12D6 /* iconmonstr-weather-8-240.png */,
 				9DAF29CA1EA90F6100F1A233 /* backgrnd1.jpg */,
 				FCB0FFF61E92BB5F00EE12D6 /* images.jpeg */,
 				FCF132D11E96AFDA0023F5CF /* background.jpeg */,
-				FCB0FFFA1E92C65C00EE12D6 /* islandweather */,
+				FCB0FFFB1E92C6F800EE12D6 /* islandweather.swift */,
 				FCD028E81E8D75C800CB3347 /* AppDelegate.swift */,
 				FCD028EA1E8D75C800CB3347 /* ViewController.swift */,
 				FCD028EC1E8D75C800CB3347 /* Main.storyboard */,
@@ -156,6 +165,7 @@
 				FCC89CD21E9FECFF00C88E87 /* jerseymet.xml in Resources */,
 				FCD028F31E8D75C800CB3347 /* LaunchScreen.storyboard in Resources */,
 				FCD028F01E8D75C800CB3347 /* Assets.xcassets in Resources */,
+				FC58E3331EA930750094B7D9 /* stationCell.xib in Resources */,
 				FCD028EE1E8D75C800CB3347 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,7 +177,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC58E3351EA935BF0094B7D9 /* stationCell.swift in Sources */,
 				FCD028EB1E8D75C800CB3347 /* ViewController.swift in Sources */,
+				FC58E3311EA930360094B7D9 /* stationListView.swift in Sources */,
 				FCB0FFFC1E92C6F800EE12D6 /* islandweather.swift in Sources */,
 				FCD028E91E8D75C800CB3347 /* AppDelegate.swift in Sources */,
 			);

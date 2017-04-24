@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view alpha="0.34999999999999998" contentMode="scaleToFill" id="iN0-l3-epB" customClass="stationCell" customModule="JerseyWweather" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="406" height="89"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cw2-HY-EBv">
+                    <rect key="frame" x="0.0" y="0.0" width="406" height="89"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="89" id="TW5-aX-HKR"/>
+                    </constraints>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dtc-d3-VXa">
+                    <rect key="frame" x="5" y="10" width="396" height="59"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="48h-6t-WiB">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="12:30:55" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WvQ-L5-W0J">
+                                    <rect key="frame" x="0.0" y="0.0" width="68" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Jersey Airport" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uKB-np-Vcz">
+                                    <rect key="frame" x="0.0" y="20.5" width="155" height="38.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cloudy" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQA-Bf-EcT">
+                            <rect key="frame" x="320" y="0.0" width="76" height="59"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="dtc-d3-VXa" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" constant="-10" id="2CD-M8-yrL"/>
+                <constraint firstItem="dtc-d3-VXa" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="EkL-G2-d7w"/>
+                <constraint firstItem="dtc-d3-VXa" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="TNW-3c-AjB"/>
+                <constraint firstAttribute="bottom" secondItem="dtc-d3-VXa" secondAttribute="bottom" constant="20" id="YLG-Nv-Ol8"/>
+                <constraint firstItem="Cw2-HY-EBv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="YN2-qi-nPE"/>
+                <constraint firstItem="Cw2-HY-EBv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ez1-kf-oDu"/>
+                <constraint firstAttribute="trailing" secondItem="Cw2-HY-EBv" secondAttribute="trailing" id="pTC-ki-G3m"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="NameValue" destination="uKB-np-Vcz" id="cih-Cb-T7K"/>
+                <outlet property="timeValue" destination="WvQ-L5-W0J" id="bl9-ec-otb"/>
+                <outlet property="weatherValue" destination="oQA-Bf-EcT" id="Gvx-BX-M7a"/>
+            </connections>
+            <point key="canvasLocation" x="-172" y="-330.5"/>
+        </view>
+    </objects>
+</document>
