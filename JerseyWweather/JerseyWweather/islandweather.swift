@@ -13,8 +13,7 @@ class islandweather: UIViewController {
     @IBOutlet weak var dayview: UIView!
     
     var secondView: UIView?
-    //var selectedIsland: String?
-    var weatherStations: NSObject?
+    var weatherStations: [String: weatherStation]?
     
     @IBAction func FlipToWeek(_ sender: Any, forEvent event: UIEvent) {
         flip()

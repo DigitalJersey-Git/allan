@@ -11,14 +11,17 @@ import UIKit
 class stationListView: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var stationList: UITableView!
-    var weatherStations: NSObject?
+    var weatherStations: [String: weatherStation]?
+    var weatherArray = [String]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let wDic = weatherStations as! NSDictionary
-        for ws in wDic {
-            print("key : \(ws)")
+        if let stationList = weatherStations {
+            for (key, value) in stationList {
+                print("\(key) : \(value)")
+                self.weatherArray.append(key)
+            }
         }
         
         self.stationList.delegate = self
@@ -36,7 +39,8 @@ class stationListView: UIViewController, UITableViewDataSource, UITableViewDeleg
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (weatherStations as! NSDictionary).count
+        //return weatherStations.count
+        return 1
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -50,9 +54,9 @@ class stationListView: UIViewController, UITableViewDataSource, UITableViewDeleg
     
         let wDic = weatherStations as! NSDictionary
         
-        if let w = wDic.object(forKey: <#T##Any#>) {
-            print(" WTYPE: " + (w as! String))
-        }
+        //if let w = wDic.object(forKey: <#T##Any#>) {
+        //    print(" WTYPE: " + (w as! String))
+        //}
         
         //cell.updateValues(stationName: <#T##String#>, weather: <#T##String#>)
         return cell

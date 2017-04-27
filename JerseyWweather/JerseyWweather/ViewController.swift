@@ -131,7 +131,7 @@ class ViewController: UIViewController, XMLParserDelegate  {
                 }
             case "stationListSegue":
                 if let nextController = segue.destination as? stationListView {
-                    nextController.weatherStations = self.weatherReports as NSObject
+                    nextController.weatherStations = self.weatherReports
                 }
             default:
                 return
