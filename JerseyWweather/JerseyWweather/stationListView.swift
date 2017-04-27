@@ -12,7 +12,7 @@ class stationListView: UIViewController, UITableViewDataSource, UITableViewDeleg
 
     @IBOutlet weak var stationList: UITableView!
     var weatherStations: [String: weatherStation]?
-    var weatherArray = [String]
+    var weatherArray = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,7 @@ class stationListView: UIViewController, UITableViewDataSource, UITableViewDeleg
         let nib = UINib(nibName: "stationCell", bundle: nil)
         self.stationList.register(nib, forCellReuseIdentifier: "stationCell")
         self.stationList.backgroundColor = .clear
-        3
+        
         // Do any additional setup after loading the view.
     }
 
@@ -39,8 +39,7 @@ class stationListView: UIViewController, UITableViewDataSource, UITableViewDeleg
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return weatherStations.count
-        return 1
+        return self.weatherArray.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -51,14 +50,15 @@ class stationListView: UIViewController, UITableViewDataSource, UITableViewDeleg
         let cell = tableView.dequeueReusableCell(withIdentifier: "stationCell", for: indexPath) as! stationCell
         
         cell.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 0.0, blue: 0.0, alpha: 0.35)
-    
-        let wDic = weatherStations as! NSDictionary
         
-        //if let w = wDic.object(forKey: <#T##Any#>) {
-        //    print(" WTYPE: " + (w as! String))
-        //}
+        let name = self.weatherArray[indexPath.row]
         
-        //cell.updateValues(stationName: <#T##String#>, weather: <#T##String#>)
+        if let stationList = weatherStations {
+            if let value:weatherStation = stationList[name], let weather = value.Weather {
+                cell.updateValues(stationName: name, weather: weather)
+            }
+        }
+        
         return cell
     }
 
