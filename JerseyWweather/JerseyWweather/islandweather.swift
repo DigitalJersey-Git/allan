@@ -12,9 +12,10 @@ class islandweather: UIViewController {
 
     @IBOutlet weak var dayview: UIView!
     
-    var secondView: UIView?
     var weatherStations: [String: weatherStation]?
-    
+
+    var secondView: UIView?
+
     @IBAction func FlipToWeek(_ sender: Any, forEvent event: UIEvent) {
         flip()
     }
