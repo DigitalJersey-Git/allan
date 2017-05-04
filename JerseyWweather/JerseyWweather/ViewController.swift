@@ -26,8 +26,6 @@ class ViewController: UIViewController, XMLParserDelegate  {
     @IBOutlet weak var stationList: UIButton!
     @IBOutlet weak var mylocation: UIButton!
     
-    @IBOutlet weak var navBar: UINavigationItem!
-    
     var selectedIsland: String?
     var xmlData: String?
     var weatherReports = [String: weatherStation]()
@@ -70,10 +68,6 @@ class ViewController: UIViewController, XMLParserDelegate  {
             }
         }
         
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.navigationBar.backgroundColor = .clear
-        //self.navigationController?.navigationBar.isHidden = true
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -137,7 +131,6 @@ class ViewController: UIViewController, XMLParserDelegate  {
                 }
             case "stationListSegue":
                 if let nextController = segue.destination as? stationListView {
-                    self.navigationController?.navigationBar.isHidden = false
                     nextController.weatherStations = self.weatherReports
                 }
             default:

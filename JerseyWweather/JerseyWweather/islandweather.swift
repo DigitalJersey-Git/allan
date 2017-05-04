@@ -10,24 +10,14 @@ import UIKit
 
 class islandweather: UIViewController {
 
-    @IBOutlet weak var dayview: UIView!
-    
     var weatherStations: [String: weatherStation]?
-
-    var secondView: UIView?
-
-    @IBAction func FlipToWeek(_ sender: Any, forEvent event: UIEvent) {
-        flip()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.secondView = UIView(frame: self.view.frame)
-        self.secondView?.isHidden = true
-        self.secondView?.backgroundColor = .green
-        if let v = self.secondView {
-            self.view.addSubview(v)
+        if let view = Bundle.main.loadNibNamed("detailView", owner: self, options: nil)?.first as? UIView {
+            //self.detailView = view
+            self.view.addSubview(view)
         }
         
         // Do any additional setup after loading the view.
@@ -38,19 +28,6 @@ class islandweather: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func flip() {
-        let transitionOptions: UIViewAnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
-        
-        UIView.transition(with: self.dayview, duration: 1.0, options: transitionOptions, animations: {
-            self.dayview.isHidden = true
-        })
-        
-        UIView.transition(with: self.secondView!, duration: 1.0, options: transitionOptions, animations: {
-            self.secondView!.isHidden = false
-        })
-    }
-    
-
     /*
     // MARK: - Navigation
 
