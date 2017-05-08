@@ -14,7 +14,7 @@ class stationListView: UIViewController, UITableViewDataSource, UITableViewDeleg
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var stationList: UITableView!
-    var weatherStations: [String: weatherStation]?
+    var weatherStations: [String : weatherStation]?
     var weatherArray = [String]()
     
     override func viewDidLoad() {

@@ -21,16 +21,19 @@ class weatherStation: NSObject {
     }
 }
 
-class ViewController: UIViewController, XMLParserDelegate  {
+class ViewController: UIViewController, XMLParserDelegate, UIPickerViewDelegate, UIPickerViewDataSource  {
     
     @IBOutlet weak var stationList: UIButton!
     @IBOutlet weak var mylocation: UIButton!
+    @IBOutlet weak var locationPicker: UIPickerView!
     
     var selectedIsland: String?
     var xmlData: String?
     var weatherReports = [String: weatherStation]()
     var currentStation: weatherStation?
     var foundCharacters: String = String()
+    var pickerData:[String] = [String]()
+    var locationSelected: String?
     
     @IBAction func weatherLocBPush(_ sender: Any) {
         let Btn = sender as! UIButton
@@ -62,13 +65,21 @@ class ViewController: UIViewController, XMLParserDelegate  {
                     if let xdata = xmlData?.data(using: String.Encoding.utf8) {
                         let parser = XMLParser(data: xdata)
                         parser.delegate = self
-                        print("Result: \(parser.parse())")
+                        //print("Result: \(parser.parse())")
                     }
                 }
             }
         }
         
-        // Do any additional setup after loading the view, typically from a nib.
+        self.locationPicker.delegate = self
+        self.locationPicker.dataSource = self
+        self.locationPicker.backgroundColor = UIColor.clear
+        
+        for (key, value) in self.weatherReports {
+            print("\(key) : \(value)")
+            
+            self.pickerData.append(key)
+        }
     }
     
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
@@ -115,6 +126,22 @@ class ViewController: UIViewController, XMLParserDelegate  {
         
         self.foundCharacters = ""
     }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.pickerData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return self.pickerData[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.locationSelected = self.pickerData[row]
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -127,7 +154,8 @@ class ViewController: UIViewController, XMLParserDelegate  {
         switch segue.identifier! {
             case "islandweatherSegue":
                 if let nextController = segue.destination as? islandweather {
-                    //nextController.selectedIsland = self.selectedIsland
+                    nextController.weatherStations = self.weatherReports
+                    nextController.myLocation = self.locationSelected
                 }
             case "stationListSegue":
                 if let nextController = segue.destination as? stationListView {

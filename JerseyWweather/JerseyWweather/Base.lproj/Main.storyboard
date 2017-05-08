@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -83,15 +83,34 @@
                                     <constraint firstAttribute="height" constant="140" id="4eU-Yv-s0z"/>
                                 </constraints>
                             </imageView>
+                            <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xJN-6S-U57">
+                                <rect key="frame" x="0.0" y="403" width="414" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="zqx-px-8I3"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yve-xB-WYu">
+                                <rect key="frame" x="152" y="366" width="110.33333333333331" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110.33" id="VBe-pe-2bH"/>
+                                    <constraint firstAttribute="height" constant="21" id="eNc-Cf-4Hf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="qkX-bj-RQj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="17F-Pt-vNn"/>
+                            <constraint firstItem="WbA-rn-All" firstAttribute="top" secondItem="xJN-6S-U57" secondAttribute="bottom" constant="16" id="9r1-y4-9TH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YSe-2L-aSC" secondAttribute="trailing" constant="-20" id="DWA-TX-fBc"/>
+                            <constraint firstItem="yve-xB-WYu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gt4-2F-5yM"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WbA-rn-All" secondAttribute="bottom" constant="100" id="P7C-hO-G8S"/>
                             <constraint firstItem="LiF-WI-WhP" firstAttribute="top" secondItem="qkX-bj-RQj" secondAttribute="bottom" constant="34" id="WyN-4M-yZF"/>
                             <constraint firstItem="LiF-WI-WhP" firstAttribute="leading" secondItem="qkX-bj-RQj" secondAttribute="leading" id="eH6-Bj-gfo"/>
                             <constraint firstItem="qkX-bj-RQj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="40" id="eOT-Ji-Jzq"/>
+                            <constraint firstItem="xJN-6S-U57" firstAttribute="top" secondItem="yve-xB-WYu" secondAttribute="bottom" constant="16" id="fcP-us-0Ub"/>
                             <constraint firstItem="YSe-2L-aSC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="gzK-Y7-D8t"/>
                             <constraint firstItem="YSe-2L-aSC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="ruh-FL-dkW"/>
                             <constraint firstItem="WbA-rn-All" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s1p-5I-g94"/>
@@ -99,6 +118,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="locationPicker" destination="xJN-6S-U57" id="A0t-2u-NJ7"/>
                         <outlet property="mylocation" destination="3Nr-ce-969" id="VkG-Br-OUh"/>
                         <outlet property="stationList" destination="4i1-dS-4Zx" id="NpK-UY-sHr"/>
                         <segue destination="RbO-Pn-b7E" kind="show" identifier="islandweatherSegue" id="oML-hS-xH1"/>

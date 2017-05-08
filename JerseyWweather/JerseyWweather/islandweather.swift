@@ -11,12 +11,22 @@ import UIKit
 class islandweather: UIViewController {
 
     var weatherStations: [String: weatherStation]?
+    var myLocation: String?
+    var detailView: UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         if let view = Bundle.main.loadNibNamed("detailView", owner: self, options: nil)?.first as? UIView {
-            //self.detailView = view
+            
+            if let stationList = weatherStations, let loc = myLocation {
+                let ws = stationList[loc] as? weatherStation
+                
+                
+            }
+            
+            
+            
             self.view.addSubview(view)
         }
         
