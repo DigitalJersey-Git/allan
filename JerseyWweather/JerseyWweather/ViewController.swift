@@ -65,7 +65,7 @@ class ViewController: UIViewController, XMLParserDelegate, UIPickerViewDelegate,
                     if let xdata = xmlData?.data(using: String.Encoding.utf8) {
                         let parser = XMLParser(data: xdata)
                         parser.delegate = self
-                        //print("Result: \(parser.parse())")
+                        print("Result: \(parser.parse())")
                     }
                 }
             }

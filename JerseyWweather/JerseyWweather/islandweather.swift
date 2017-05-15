@@ -18,14 +18,11 @@ class islandweather: UIViewController {
         super.viewDidLoad()
 
         if let view = Bundle.main.loadNibNamed("detailView", owner: self, options: nil)?.first as? UIView {
-            
             if let stationList = weatherStations, let loc = myLocation {
-                let ws = stationList[loc] as? weatherStation
-                
-                
+                if let ws = stationList[loc] {
+                    (view as! detailView).updateView(station: ws)
+                }
             }
-            
-            
             
             self.view.addSubview(view)
         }

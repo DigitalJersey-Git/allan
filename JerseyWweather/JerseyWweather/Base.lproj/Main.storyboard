@@ -90,13 +90,12 @@
                                 </constraints>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yve-xB-WYu">
-                                <rect key="frame" x="152" y="366" width="110.33333333333331" height="21"/>
+                                <rect key="frame" x="25" y="366" width="364" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="110.33" id="VBe-pe-2bH"/>
                                     <constraint firstAttribute="height" constant="21" id="eNc-Cf-4Hf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -106,6 +105,7 @@
                             <constraint firstItem="WbA-rn-All" firstAttribute="top" secondItem="xJN-6S-U57" secondAttribute="bottom" constant="16" id="9r1-y4-9TH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YSe-2L-aSC" secondAttribute="trailing" constant="-20" id="DWA-TX-fBc"/>
                             <constraint firstItem="yve-xB-WYu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gt4-2F-5yM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yve-xB-WYu" secondAttribute="trailing" constant="5" id="NjA-O1-zww"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WbA-rn-All" secondAttribute="bottom" constant="100" id="P7C-hO-G8S"/>
                             <constraint firstItem="LiF-WI-WhP" firstAttribute="top" secondItem="qkX-bj-RQj" secondAttribute="bottom" constant="34" id="WyN-4M-yZF"/>
                             <constraint firstItem="LiF-WI-WhP" firstAttribute="leading" secondItem="qkX-bj-RQj" secondAttribute="leading" id="eH6-Bj-gfo"/>
@@ -115,6 +115,7 @@
                             <constraint firstItem="YSe-2L-aSC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="ruh-FL-dkW"/>
                             <constraint firstItem="WbA-rn-All" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s1p-5I-g94"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="YSe-2L-aSC" secondAttribute="bottom" id="vZY-wD-ZjN"/>
+                            <constraint firstItem="yve-xB-WYu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="5" id="vo9-C5-bGI"/>
                         </constraints>
                     </view>
                     <connections>

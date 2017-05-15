@@ -10,7 +10,7 @@ import UIKit
 
 class stationListView: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var detailView: UIView?
+    var detailView: detailView?
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var stationList: UITableView!
@@ -33,13 +33,12 @@ class stationListView: UIViewController, UITableViewDataSource, UITableViewDeleg
         self.stationList.register(nib, forCellReuseIdentifier: "stationCell")
         self.stationList.backgroundColor = .clear
         
-        if let view = Bundle.main.loadNibNamed("detailView", owner: self, options: nil)?.first as? UIView {
+        if let view = Bundle.main.loadNibNamed("detailView", owner: self, options: nil)?.first as? detailView {
             self.detailView = view
             self.detailView?.isHidden = true
             self.view.addSubview(view)
         }
         
-        // Do any additional setup after loading the view.
     }
     
     func flip() {
@@ -61,6 +60,14 @@ class stationListView: UIViewController, UITableViewDataSource, UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let name = self.weatherArray[indexPath.row]
+        
+        if let stationList = weatherStations {
+            if let value:weatherStation = stationList[name] {
+                self.detailView?.updateView(station: value)
+            }
+        }
+        
         self.flip()
     }
     
