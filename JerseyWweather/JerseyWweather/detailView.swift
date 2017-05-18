@@ -15,11 +15,13 @@ class detailView: UIView {
     @IBOutlet weak var visibility: UILabel!
     
     @IBOutlet weak var weatherImage: UIImageView!
+    @IBOutlet weak var location: UILabel!
     
-    func updateView(station: weatherStation) {
+    func updateView(station: weatherStation, location: String) {
         self.weatherCondition.text = station.Weather
         self.pressure.text = String(station.Pressure!)
         self.visibility.text = station.Visibility
+        self.location.text = location
     }
     
     /*

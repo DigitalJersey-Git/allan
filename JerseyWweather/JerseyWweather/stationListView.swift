@@ -11,11 +11,26 @@ import UIKit
 class stationListView: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var detailView: detailView?
-    @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var stationList: UITableView!
+
+    
     var weatherStations: [String : weatherStation]?
     var weatherArray = [String]()
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override  func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationController?.navigationBar.backItem?.leftBarButtonItem = UIBarButtonItem(
+            title: "Continue",
+            style: .plain,
+            target: self,
+            action: #selector(self.flip(sender:)))
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,10 +53,9 @@ class stationListView: UIViewController, UITableViewDataSource, UITableViewDeleg
             self.detailView?.isHidden = true
             self.view.addSubview(view)
         }
-        
     }
     
-    func flip() {
+    func flip(sender: Any) {
         let transitionOptions: UIViewAnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
         
         UIView.transition(with: self.tableView, duration: 1.0, options: transitionOptions, animations: {
@@ -64,11 +78,11 @@ class stationListView: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         if let stationList = weatherStations {
             if let value:weatherStation = stationList[name] {
-                self.detailView?.updateView(station: value)
+                self.detailView?.updateView(station: value, location: name)
             }
         }
         
-        self.flip()
+        self.flip(sender: "hi")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -95,14 +109,10 @@ class stationListView: UIViewController, UITableViewDataSource, UITableViewDeleg
         return cell
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        
+        print("DEST : \(segue.destination)")
     }
-    */
 
 }

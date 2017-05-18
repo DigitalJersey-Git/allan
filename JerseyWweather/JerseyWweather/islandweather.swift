@@ -14,13 +14,21 @@ class islandweather: UIViewController {
     var myLocation: String?
     var detailView: UIView?
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override  func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         if let view = Bundle.main.loadNibNamed("detailView", owner: self, options: nil)?.first as? UIView {
             if let stationList = weatherStations, let loc = myLocation {
                 if let ws = stationList[loc] {
-                    (view as! detailView).updateView(station: ws)
+                    (view as! detailView).updateView(station: ws, location: loc)
                 }
             }
             

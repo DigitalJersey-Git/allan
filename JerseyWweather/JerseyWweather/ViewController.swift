@@ -27,6 +27,8 @@ class ViewController: UIViewController, XMLParserDelegate, UIPickerViewDelegate,
     @IBOutlet weak var mylocation: UIButton!
     @IBOutlet weak var locationPicker: UIPickerView!
     
+    @IBOutlet weak var navHeader: UINavigationItem!
+    
     var selectedIsland: String?
     var xmlData: String?
     var weatherReports = [String: weatherStation]()
@@ -70,6 +72,8 @@ class ViewController: UIViewController, XMLParserDelegate, UIPickerViewDelegate,
                 }
             }
         }
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         self.locationPicker.delegate = self
         self.locationPicker.dataSource = self
@@ -158,6 +162,7 @@ class ViewController: UIViewController, XMLParserDelegate, UIPickerViewDelegate,
                     nextController.myLocation = self.locationSelected
                 }
             case "stationListSegue":
+                print("DEST : \(segue.destination)")
                 if let nextController = segue.destination as? stationListView {
                     nextController.weatherStations = self.weatherReports
                 }
