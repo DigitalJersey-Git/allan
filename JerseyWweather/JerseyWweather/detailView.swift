@@ -17,11 +17,27 @@ class detailView: UIView {
     @IBOutlet weak var weatherImage: UIImageView!
     @IBOutlet weak var location: UILabel!
     
+    let weatherGraphic:[String : String] = ["Cloudy" : "kweather", "Rain" : "weather_showers", "N/A" : "weather_fog"]
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        //if let filePath = Bundle.main.path(forResource: "kweather", ofType: "png"), let image = UIImage(contentsOfFile: filePath) {
+        //    weatherGraphic = ["kweather" : UIImage(
+        //}
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     func updateView(station: weatherStation, location: String) {
         self.weatherCondition.text = station.Weather
         self.pressure.text = String(station.Pressure!)
         self.visibility.text = station.Visibility
         self.location.text = location
+        
+        
     }
     
     /*

@@ -51,6 +51,10 @@ class stationListView: UIViewController, UITableViewDataSource, UITableViewDeleg
         if let view = Bundle.main.loadNibNamed("detailView", owner: self, options: nil)?.first as? detailView {
             self.detailView = view
             self.detailView?.isHidden = true
+            
+            let navHeight = (self.navigationController?.navigationBar.bounds.height)! + UIApplication.shared.statusBarFrame.size.height
+            view.frame = CGRect(x: 0, y: navHeight, width: self.view.frame.width, height: self.view.frame.height - navHeight)
+            
             self.view.addSubview(view)
         }
     }

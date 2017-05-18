@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,15 +18,19 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgrnd1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="hou-Xb-NOO">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
-                <view alpha="0.20000000000000001" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ozb-Xs-gZq">
+                <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ozb-Xs-gZq">
                     <rect key="frame" x="8" y="20" width="358" height="146"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="146" id="dsL-r2-Myh"/>
+                    </constraints>
                 </view>
-                <view alpha="0.20000000298023224" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1M3-Pf-3IH">
+                <view alpha="0.20000000298023224" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1M3-Pf-3IH">
                     <rect key="frame" x="8" y="174" width="358" height="146"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="146" id="jGf-ng-oW9"/>
+                    </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Osv-Ee-Lj2">
                     <rect key="frame" x="120" y="218" width="147" height="25"/>
@@ -88,18 +92,28 @@
                     <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view alpha="0.20000000298023224" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Xu-F2-B1C">
+                <view alpha="0.20000000298023224" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Xu-F2-B1C">
                     <rect key="frame" x="8" y="328" width="358" height="326"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="1M3-Pf-3IH" firstAttribute="top" secondItem="ozb-Xs-gZq" secondAttribute="bottom" constant="8" id="5iH-gJ-SNw"/>
+                <constraint firstItem="ozb-Xs-gZq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="5zk-P7-1Db"/>
                 <constraint firstItem="hou-Xb-NOO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6C3-m4-Wb5"/>
+                <constraint firstAttribute="trailing" secondItem="0Xu-F2-B1C" secondAttribute="trailing" constant="9" id="CvN-E7-Zit"/>
                 <constraint firstAttribute="bottom" secondItem="hou-Xb-NOO" secondAttribute="bottom" id="Jgb-Lx-IWf"/>
                 <constraint firstItem="hou-Xb-NOO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="MiM-yP-ctS"/>
                 <constraint firstAttribute="trailing" secondItem="hou-Xb-NOO" secondAttribute="trailing" id="NX2-5c-5JY"/>
+                <constraint firstItem="0Xu-F2-B1C" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Y8w-3P-hVZ"/>
+                <constraint firstItem="0Xu-F2-B1C" firstAttribute="top" secondItem="1M3-Pf-3IH" secondAttribute="bottom" constant="8" id="gpS-67-jGR"/>
+                <constraint firstItem="1M3-Pf-3IH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="jYA-By-LI9"/>
+                <constraint firstAttribute="trailing" secondItem="1M3-Pf-3IH" secondAttribute="trailing" constant="9" id="q4q-ZH-MTE"/>
+                <constraint firstItem="ozb-Xs-gZq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="qJ3-Ke-gR3"/>
+                <constraint firstAttribute="bottom" secondItem="0Xu-F2-B1C" secondAttribute="bottom" constant="13" id="rsa-cQ-60Y"/>
+                <constraint firstAttribute="trailing" secondItem="ozb-Xs-gZq" secondAttribute="trailing" constant="9" id="yMi-va-sAj"/>
+                <constraint firstItem="1M3-Pf-3IH" firstAttribute="top" secondItem="ozb-Xs-gZq" secondAttribute="bottom" constant="8" id="zdX-su-j4N"/>
             </constraints>
             <connections>
                 <outlet property="location" destination="i2k-JV-Skh" id="PQT-TL-nyx"/>

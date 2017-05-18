@@ -24,13 +24,16 @@ class islandweather: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         if let view = Bundle.main.loadNibNamed("detailView", owner: self, options: nil)?.first as? UIView {
             if let stationList = weatherStations, let loc = myLocation {
                 if let ws = stationList[loc] {
                     (view as! detailView).updateView(station: ws, location: loc)
                 }
             }
+            
+            let navHeight = (self.navigationController?.navigationBar.bounds.height)! + UIApplication.shared.statusBarFrame.size.height
+            view.frame = CGRect(x: 0, y: navHeight, width: self.view.frame.width, height: self.view.frame.height - navHeight)
             
             self.view.addSubview(view)
         }
