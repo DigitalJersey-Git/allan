@@ -25,10 +25,12 @@ class detailView: UIView {
         //if let filePath = Bundle.main.path(forResource: "kweather", ofType: "png"), let image = UIImage(contentsOfFile: filePath) {
         //    weatherGraphic = ["kweather" : UIImage(
         //}
+        self.weatherImage.image = UIImage(named: "\((weatherGraphic["Cloudy"]!)).png")
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
     
     func updateView(station: weatherStation, location: String) {

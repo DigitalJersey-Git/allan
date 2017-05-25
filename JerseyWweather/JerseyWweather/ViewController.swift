@@ -61,7 +61,7 @@ class ViewController: UIViewController, XMLParserDelegate, UIPickerViewDelegate,
     
         if self.view.bounds.size.width <= 480 {
             stack.axis = .vertical
-            stack.spacing = 30
+            stack.spacing = 15
         }
         
         
