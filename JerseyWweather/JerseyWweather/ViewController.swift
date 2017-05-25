@@ -27,6 +27,7 @@ class ViewController: UIViewController, XMLParserDelegate, UIPickerViewDelegate,
     @IBOutlet weak var mylocation: UIButton!
     @IBOutlet weak var locationPicker: UIPickerView!
     
+    @IBOutlet weak var stack: UIStackView!
     @IBOutlet weak var navHeader: UINavigationItem!
     
     var selectedIsland: String?
@@ -58,6 +59,12 @@ class ViewController: UIViewController, XMLParserDelegate, UIPickerViewDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        if self.view.bounds.size.width <= 480 {
+            stack.axis = .vertical
+            stack.spacing = 30
+        }
+        
+        
         if let path = Bundle.main.path(forResource: "jerseymet", ofType: "xml") {
             let fm = FileManager()
             let exists = fm.fileExists(atPath: path)
