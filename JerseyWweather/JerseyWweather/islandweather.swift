@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MapKit
 
-class islandweather: UIViewController {
+class islandweather: UIViewController, MKMapViewDelegate {
 
     var weatherStations: [String: weatherStation]?
     var myLocation: String?
@@ -24,7 +25,7 @@ class islandweather: UIViewController {
         if let view = Bundle.main.loadNibNamed("detailView", owner: self, options: nil)?.first as? UIView {
             if let stationList = weatherStations, let loc = myLocation {
                 if let ws = stationList[loc] {
-                    (view as! detailView).updateView(station: ws, location: loc)
+                    (view as! detailView).updateView(station: ws, location: loc, controller: self)
                 }
             }
             
@@ -44,7 +45,7 @@ class islandweather: UIViewController {
  
         if let stationList = weatherStations, let loc = myLocation {
             if let ws = stationList[loc] {
-                (self.detailView as! detailView).updateView(station: ws, location: loc)
+                (self.detailView as! detailView).updateView(station: ws, location: loc, controller: self)
             }
         }
         
@@ -55,7 +56,6 @@ class islandweather: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
     
     /*
     // MARK: - Navigation

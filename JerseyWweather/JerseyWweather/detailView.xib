@@ -4,8 +4,8 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -74,9 +74,12 @@
                     <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HDz-g7-p4e">
-                    <rect key="frame" x="18" y="394" width="128" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HDz-g7-p4e">
+                    <rect key="frame" x="18" y="378" width="89" height="89"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="89" id="EUr-FT-pO3"/>
+                        <constraint firstAttribute="width" secondItem="HDz-g7-p4e" secondAttribute="height" multiplier="1:1" id="pa8-z1-usK"/>
+                    </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Visibility:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="meJ-My-qFb">
                     <rect key="frame" x="18" y="217" width="106" height="25"/>
@@ -96,16 +99,29 @@
                     <rect key="frame" x="8" y="328" width="358" height="326"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1Vc-aE-8zv">
+                    <rect key="frame" x="120" y="376" width="240" height="184"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="240" id="afL-Wm-ZI3"/>
+                        <constraint firstAttribute="height" constant="184" id="kGO-U0-l1K"/>
+                    </constraints>
+                </mapView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="0Xu-F2-B1C" firstAttribute="top" secondItem="HDz-g7-p4e" secondAttribute="bottom" constant="-139" id="3Km-5T-HZI"/>
+                <constraint firstItem="0Xu-F2-B1C" firstAttribute="leading" secondItem="HDz-g7-p4e" secondAttribute="trailing" constant="-99" id="4un-c7-xdQ"/>
                 <constraint firstItem="1M3-Pf-3IH" firstAttribute="top" secondItem="ozb-Xs-gZq" secondAttribute="bottom" constant="8" id="5iH-gJ-SNw"/>
                 <constraint firstItem="ozb-Xs-gZq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="5zk-P7-1Db"/>
                 <constraint firstItem="hou-Xb-NOO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6C3-m4-Wb5"/>
+                <constraint firstItem="1Vc-aE-8zv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="120" id="Cp9-Wa-iiC"/>
                 <constraint firstAttribute="trailing" secondItem="0Xu-F2-B1C" secondAttribute="trailing" constant="9" id="CvN-E7-Zit"/>
                 <constraint firstAttribute="bottom" secondItem="hou-Xb-NOO" secondAttribute="bottom" id="Jgb-Lx-IWf"/>
+                <constraint firstItem="1Vc-aE-8zv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="376" id="KOs-iv-5O4"/>
                 <constraint firstItem="hou-Xb-NOO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="MiM-yP-ctS"/>
                 <constraint firstAttribute="trailing" secondItem="hou-Xb-NOO" secondAttribute="trailing" id="NX2-5c-5JY"/>
+                <constraint firstItem="HDz-g7-p4e" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="18" id="U8m-zc-M0N"/>
                 <constraint firstItem="0Xu-F2-B1C" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Y8w-3P-hVZ"/>
                 <constraint firstItem="0Xu-F2-B1C" firstAttribute="top" secondItem="1M3-Pf-3IH" secondAttribute="bottom" constant="8" id="gpS-67-jGR"/>
                 <constraint firstItem="1M3-Pf-3IH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="jYA-By-LI9"/>
@@ -117,6 +133,7 @@
             </constraints>
             <connections>
                 <outlet property="location" destination="i2k-JV-Skh" id="PQT-TL-nyx"/>
+                <outlet property="mapView" destination="1Vc-aE-8zv" id="d3d-Bs-DN5"/>
                 <outlet property="pressure" destination="1hB-yK-jlt" id="oIw-9E-nf3"/>
                 <outlet property="visibility" destination="Osv-Ee-Lj2" id="z5W-cZ-leh"/>
                 <outlet property="weatherCondition" destination="4Bl-rH-aIp" id="9Ps-Mn-WMo"/>

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JerseyWweather/ViewController.swift"
-            timestampString = "517428624.062275"
+            timestampString = "518029969.347272"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "setSelectedIs(sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JerseyWweather/ViewController.swift"
-            timestampString = "517428624.062275"
+            timestampString = "518029969.347272"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JerseyWweather/stationListView.swift"
-            timestampString = "516567147.823955"
+            timestampString = "518023362.37918"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "stationListView"
             landmarkType = "3">
          </BreakpointContent>
@@ -58,45 +58,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JerseyWweather/ViewController.swift"
-            timestampString = "517428851.479502"
+            timestampString = "518029969.347272"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "JerseyWweather.ViewController.prepare (for : __ObjC.UIStoryboardSegue, sender : Swift.Optional&lt;Any&gt;) -&gt; ()"
-                  moduleName = "JerseyWweather"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pisterair/Documents/allan/JerseyWweather/JerseyWweather/ViewController.swift"
-                  timestampString = "517424684.786673"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "167"
-                  endingLineNumber = "167"
-                  offsetFromSymbolStart = "931">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "JerseyWweather.ViewController.prepare (for : __ObjC.UIStoryboardSegue, sender : Swift.Optional&lt;Any&gt;) -&gt; ()"
-                  moduleName = "JerseyWweather"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pisterair/Documents/allan/JerseyWweather/JerseyWweather/ViewController.swift"
-                  timestampString = "517424684.789873"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "167"
-                  endingLineNumber = "167"
-                  offsetFromSymbolStart = "1083">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -106,45 +74,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JerseyWweather/ViewController.swift"
-            timestampString = "517428851.479502"
+            timestampString = "518029969.347272"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "JerseyWweather.ViewController.prepare (for : __ObjC.UIStoryboardSegue, sender : Swift.Optional&lt;Any&gt;) -&gt; ()"
-                  moduleName = "JerseyWweather"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pisterair/Documents/allan/JerseyWweather/JerseyWweather/ViewController.swift"
-                  timestampString = "517424684.79712"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "173"
-                  endingLineNumber = "173"
-                  offsetFromSymbolStart = "1968">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "JerseyWweather.ViewController.prepare (for : __ObjC.UIStoryboardSegue, sender : Swift.Optional&lt;Any&gt;) -&gt; ()"
-                  moduleName = "JerseyWweather"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pisterair/Documents/allan/JerseyWweather/JerseyWweather/ViewController.swift"
-                  timestampString = "517424684.802228"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "173"
-                  endingLineNumber = "173"
-                  offsetFromSymbolStart = "2123">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -154,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JerseyWweather/ViewController.swift"
-            timestampString = "517428851.479502"
+            timestampString = "518029969.347272"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -166,33 +102,113 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "JerseyWweather/islandweather.swift"
-            timestampString = "517426309.98375"
+            timestampString = "518022524.03497"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JerseyWweather.islandweather.viewWillAppear (Swift.Bool) -&gt; ()"
+                  moduleName = "JerseyWweather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pisterair/Documents/allan/JerseyWweather/JerseyWweather/islandweather.swift"
+                  timestampString = "518022008.866602"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "196">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JerseyWweather.islandweather.viewWillAppear (Swift.Bool) -&gt; ()"
+                  moduleName = "JerseyWweather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pisterair/Documents/allan/JerseyWweather/JerseyWweather/islandweather.swift"
+                  timestampString = "518022008.869481"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "243">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JerseyWweather/ViewController.swift"
+            timestampString = "518029969.347272"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "JerseyWweather/ViewController.swift"
-            timestampString = "517428851.479502"
+            filePath = "JerseyWweather/islandweather.swift"
+            timestampString = "518022524.03497"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JerseyWweather.islandweather.viewDidLoad () -&gt; ()"
+                  moduleName = "JerseyWweather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pisterair/Documents/allan/JerseyWweather/JerseyWweather/islandweather.swift"
+                  timestampString = "518022008.886369"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JerseyWweather.islandweather.viewDidLoad () -&gt; ()"
+                  moduleName = "JerseyWweather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pisterair/Documents/allan/JerseyWweather/JerseyWweather/islandweather.swift"
+                  timestampString = "518022008.889389"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "1006">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

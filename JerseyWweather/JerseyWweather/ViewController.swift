@@ -17,6 +17,7 @@ class weatherStation: NSObject {
     var Weather: String?
     var Pressure: Int?
     var Tendency: String?
+    var longLat: (log: Double, Lat: Double)?
     
     override init() {
         super.init()
@@ -138,6 +139,11 @@ class ViewController: UIViewController, XMLParserDelegate, UIPickerViewDelegate,
                 self.currentStation?.Pressure = Int(self.foundCharacters)
             case "tendency":
                 self.currentStation?.Tendency = self.foundCharacters
+            case "Location":
+                var list = self.foundCharacters.components(separatedBy: ",")
+                if list.count == 2 {
+                    //self.currentStation?.longLat = (Double: list[0], Double: list[1])
+                }
             default:
                 print(self.foundCharacters)
         }

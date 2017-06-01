@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MapKit
 
-class stationListView: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class stationListView: UIViewController, UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate {
 
     var detailView: detailView?
     
@@ -82,7 +83,7 @@ class stationListView: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         if let stationList = weatherStations {
             if let value:weatherStation = stationList[name] {
-                self.detailView?.updateView(station: value, location: name)
+                self.detailView?.updateView(station: value, location: name, controller: self)
             }
         }
         

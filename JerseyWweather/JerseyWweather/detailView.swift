@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import MapKit
 
 class detailView: UIView {
 
+    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var weatherCondition: UILabel!
     @IBOutlet weak var pressure: UILabel!
     @IBOutlet weak var visibility: UILabel!
@@ -28,7 +30,8 @@ class detailView: UIView {
         super.init(coder: aDecoder)
     }
     
-    func updateView(station: weatherStation, location: String) {
+    func updateView(station: weatherStation, location: String, controller: MKMapViewDelegate) {
+        self.mapView.delegate = controller
         self.weatherCondition.text = station.Weather
         self.pressure.text = String(station.Pressure!)
         self.visibility.text = station.Visibility
@@ -37,7 +40,21 @@ class detailView: UIView {
         if let name = station.Weather, let gname = weatherGraphic[ name ] {
             self.weatherImage.image = UIImage(named: "\(gname).png")
         }
+        
+        self.moveToLocation(point: CGPoint(x: 50.881672185016924, y: -2.59552001953125))
+    }
+    
+    func moveToLocation(point: CGPoint) {
+        let batmanCenterCoordinate = CLLocationCoordinate2DMake(CLLocationDegrees(point.x), CLLocationDegrees(point.y))
+        var region: MKCoordinateRegion = MKCoordinateRegion()
+        region.center = batmanCenterCoordinate//self.mapView.userLocation.coordinate
+        
+        var span: MKCoordinateSpan = MKCoordinateSpan()
+        span.latitudeDelta  = 5 // Change these values to change the zoom
+        span.longitudeDelta = 5
+        region.span = span
 
+        self.mapView.setRegion(region, animated: true)
     }
     
     /*

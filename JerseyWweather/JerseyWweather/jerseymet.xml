@@ -8,6 +8,8 @@
   <Weather>Cloudy</Weather>
   <Pressure>1024</Pressure>
   <Tendency>RS</Tendency>
+  <LocationLong>49.214439</LocationLong>
+  <LocationLat>-2.131250</LocationLat>
 </StationReport>
 <StationReport Name="Guernsey Airport">
   <Wind>WNW3</Wind>
@@ -16,6 +18,8 @@
   <Weather>Cloudy</Weather>
   <Pressure>1024</Pressure>
   <Tendency>RS</Tendency>
+  <LocationLong>49.465691</LocationLong>
+  <LocationLat>-2.585278</LocationLat>
 </StationReport>
 <StationReport Name="Alderney Airport">
   <Wind>WNW4</Wind>
@@ -24,6 +28,8 @@
   <Weather>Cloudy</Weather>
   <Pressure>1024</Pressure>
   <Tendency />
+  <LocationLong>2.587893</LocationLong>
+  <LocationLat>-2.079286</LocationLat>
 </StationReport>
 <StationReport Name="Cap de la Hague">
   <Wind>WNW4</Wind>
@@ -32,6 +38,7 @@
   <Weather>Rain</Weather>
   <Pressure>1024</Pressure>
   <Tendency>RS</Tendency>
+  <Location>49.726969,-1.939925</Location>
 </StationReport>
 <StationReport Name="Cherbourg Airport">
   <Wind>S2</Wind>
@@ -40,6 +47,8 @@
   <Weather>Mist</Weather>
   <Pressure>1024</Pressure>
   <Tendency>FS</Tendency>
+  <LocationLong>2.587893</LocationLong>
+  <LocationLat>-2.079286</LocationLat>
 </StationReport>
 <StationReport Name="Dinard Airport">
   <Wind>SW2</Wind>
@@ -48,6 +57,8 @@
   <Weather>Cloudy</Weather>
   <Pressure>1025</Pressure>
   <Tendency>FS</Tendency>
+  <LocationLong>48.587893</LocationLong>
+  <LocationLat>-2.079286</LocationLat>
 </StationReport>
 <StationReport Name="Portland">
   <Wind>WNW4</Wind>
@@ -56,6 +67,8 @@
   <Weather>Cloudy</Weather>
   <Pressure>1023</Pressure>
   <Tendency>RS</Tendency>
+  <LocationLong>2.587893</LocationLong>
+  <LocationLat>-2.079286</LocationLat>
 </StationReport>
 <StationReport Name="Channel Light Auto">
   <Wind>N/A F4</Wind>
@@ -64,5 +77,7 @@
   <Weather>N/A</Weather>
   <Pressure>1024</Pressure>
   <Tendency>RS</Tendency>
+  <LocationLong>49.214439</LocationLong>
+  <LocationLat>-2.131250</LocationLat>
 </StationReport>
 </CoastalReports>
