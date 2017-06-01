@@ -162,6 +162,7 @@
 				TargetAttributes = {
 					FCD028E41E8D75C700CB3347 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = LJNC42C788;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -338,7 +339,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = LJNC42C788;
 				INFOPLIST_FILE = JerseyWweather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MulgaKittyProductions.JerseyWweather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -351,7 +354,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = LJNC42C788;
 				INFOPLIST_FILE = JerseyWweather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MulgaKittyProductions.JerseyWweather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
