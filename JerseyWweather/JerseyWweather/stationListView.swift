@@ -58,7 +58,7 @@ class stationListView: UIViewController, UITableViewDataSource, UITableViewDeleg
             self.view.addSubview(view)
         }
     }
-    
+    /*
     func flip(sender: Any) {
         let transitionOptions: UIViewAnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
         
@@ -70,7 +70,7 @@ class stationListView: UIViewController, UITableViewDataSource, UITableViewDeleg
             self.detailView!.isHidden = false
         })
     }
-    
+    */
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -117,6 +117,51 @@ class stationListView: UIViewController, UITableViewDataSource, UITableViewDeleg
         super.prepare(for: segue, sender: sender)
         
         print("DEST : \(segue.destination)")
+    }
+    
+    /*FLIP ANIMATION---------------------------------------------------------------------------------------------------------*/
+    
+    
+    
+    func flip(sender: Any) {
+        let transitionOptions: UIViewAnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
+        
+        UIView.transition(with: self.tableView, duration: 1.0, options: transitionOptions, animations: {
+            self.tableView.isHidden = true
+        })
+        
+        UIView.transition(with: self.detailView!, duration: 1.0, options: transitionOptions, animations: {
+            self.detailView!.isHidden = false
+            
+            self.navigationItem.hidesBackButton = true
+            let flipBackButton = UIBarButtonItem(title: "Weather Locations", style: .plain, target: self, action: #selector(stationListView.flipBack(sender:)))
+            self.navigationItem.leftBarButtonItem = flipBackButton
+        })
+    }
+    
+    func flipBack(sender: Any) {
+        let transitionOptions: UIViewAnimationOptions = [.transitionFlipFromLeft, .showHideTransitionViews]
+        
+        UIView.transition(with: self.tableView, duration: 1.0, options: transitionOptions, animations: {
+            self.tableView.isHidden = false
+        })
+        
+        UIView.transition(with: self.detailView!, duration: 1.0, options: transitionOptions, animations: {
+            self.detailView!.isHidden = true
+            
+            let flipBackButton = UIBarButtonItem(title: "Home", style: .plain, target: self, action: #selector(stationListView.backToRoot(sender:)))
+            self.navigationItem.leftBarButtonItem = flipBackButton
+            self.navigationItem.hidesBackButton = true
+        })
+    }
+    
+    
+    /*NAVIGATION BACK BUTTON CUSTOMISATION---------------------------------------------------------------------------------------------------------*/
+    
+    func backToRoot(sender:UIBarButtonItem){
+        
+        _ = navigationController?.popViewController(animated: true)
+        
     }
 
 }
