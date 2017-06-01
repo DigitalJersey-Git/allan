@@ -22,11 +22,6 @@ class detailView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        //if let filePath = Bundle.main.path(forResource: "kweather", ofType: "png"), let image = UIImage(contentsOfFile: filePath) {
-        //    weatherGraphic = ["kweather" : UIImage(
-        //}
-        self.weatherImage.image = UIImage(named: "\((weatherGraphic["Cloudy"]!)).png")
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -39,7 +34,10 @@ class detailView: UIView {
         self.visibility.text = station.Visibility
         self.location.text = location
         
-        
+        if let name = station.Weather, let gname = weatherGraphic[ name ] {
+            self.weatherImage.image = UIImage(named: "\(gname).png")
+        }
+
     }
     
     /*

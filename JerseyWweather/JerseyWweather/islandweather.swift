@@ -18,10 +18,6 @@ class islandweather: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
-    override  func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +28,7 @@ class islandweather: UIViewController {
                 }
             }
             
+            self.detailView = view
             let navHeight = (self.navigationController?.navigationBar.bounds.height)! + UIApplication.shared.statusBarFrame.size.height
             view.frame = CGRect(x: 0, y: navHeight, width: self.view.frame.width, height: self.view.frame.height - navHeight)
             
@@ -41,6 +38,19 @@ class islandweather: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+ 
+        if let stationList = weatherStations, let loc = myLocation {
+            if let ws = stationList[loc] {
+                (self.detailView as! detailView).updateView(station: ws, location: loc)
+            }
+        }
+        
+        return super.viewWillAppear(animated)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

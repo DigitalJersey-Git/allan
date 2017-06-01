@@ -8,6 +8,8 @@
 
 import UIKit
 
+let saveData = UserDefaults.standard
+
 class weatherStation: NSObject {
     var wind: String?
     var Gust: String?
@@ -88,8 +90,13 @@ class ViewController: UIViewController, XMLParserDelegate, UIPickerViewDelegate,
         
         for (key, value) in self.weatherReports {
             print("\(key) : \(value)")
-            
             self.pickerData.append(key)
+        }
+        
+        
+        if let loc:Int = saveData.value(forKey: "locationSelected") as? Int {
+            self.locationPicker.selectRow(loc, inComponent: 0, animated: true)
+            self.locationSelected = self.pickerData[loc]
         }
     }
     
@@ -152,6 +159,7 @@ class ViewController: UIViewController, XMLParserDelegate, UIPickerViewDelegate,
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.locationSelected = self.pickerData[row]
+        saveData.set(row, forKey: "locationSelected")
     }
 
     override func didReceiveMemoryWarning() {
@@ -166,7 +174,7 @@ class ViewController: UIViewController, XMLParserDelegate, UIPickerViewDelegate,
             case "islandweatherSegue":
                 if let nextController = segue.destination as? islandweather {
                     nextController.weatherStations = self.weatherReports
-                    nextController.myLocation = self.locationSelected
+                    nextController.myLocation = self.locationSelected ?? self.pickerData.first
                 }
             case "stationListSegue":
                 print("DEST : \(segue.destination)")
