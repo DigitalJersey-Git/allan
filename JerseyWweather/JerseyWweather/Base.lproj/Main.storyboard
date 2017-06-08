@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Czq-5D-l4z">
-    <device id="retina4_0" orientation="portrait">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Czq-5D-l4z">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,14 +19,14 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgrnd1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="YSe-2L-aSC">
-                                <rect key="frame" x="-4" y="44" width="328" height="524"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jersey Weather Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkX-bj-RQj">
-                                <rect key="frame" x="33.5" y="80" width="253" height="22"/>
+                                <rect key="frame" x="80.666666666666686" y="80" width="253" height="23"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -36,10 +35,10 @@
                                 </variation>
                             </label>
                             <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WbA-rn-All" userLabel="ContainerView">
-                                <rect key="frame" x="-70" y="441" width="460" height="97"/>
+                                <rect key="frame" x="-23" y="609" width="460" height="97"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ERh-hb-AsY">
-                                        <rect key="frame" x="50" y="23.5" width="360" height="50"/>
+                                        <rect key="frame" x="50" y="23.666666666666629" width="360" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Nr-ce-969">
                                                 <rect key="frame" x="0.0" y="0.0" width="170" height="50"/>
@@ -89,7 +88,7 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconmonstr-weather-8-240.png" translatesAutoresizingMaskIntoConstraints="NO" id="LiF-WI-WhP">
-                                <rect key="frame" x="33.5" y="122" width="140" height="140"/>
+                                <rect key="frame" x="80.666666666666686" y="123" width="140" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="23I-Uw-OEV">
                                         <variation key="heightClass=regular-widthClass=regular" constant="280"/>
@@ -98,14 +97,14 @@
                                 </constraints>
                             </imageView>
                             <pickerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xJN-6S-U57">
-                                <rect key="frame" x="0.0" y="313" width="320" height="120"/>
+                                <rect key="frame" x="47" y="481" width="320" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="u7h-7q-409"/>
                                     <constraint firstAttribute="height" constant="120" id="zqx-px-8I3"/>
                                 </constraints>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Location:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yve-xB-WYu">
-                                <rect key="frame" x="69" y="282" width="183" height="38"/>
+                                <rect key="frame" x="116" y="450" width="183" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="eNc-Cf-4Hf"/>
                                 </constraints>
@@ -116,6 +115,21 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 </variation>
                             </label>
+                            <button opaque="NO" alpha="0.65000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GnK-LR-9VL">
+                                <rect key="frame" x="107.33333333333331" y="364" width="200" height="52"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Iur-UY-Xxy"/>
+                                    <constraint firstAttribute="height" constant="52" id="ncU-G3-ctk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchExample:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ltd-tT-R9y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -126,6 +140,8 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WbA-rn-All" secondAttribute="bottom" constant="60" id="P7C-hO-G8S">
                                 <variation key="heightClass=regular-widthClass=compact" constant="30"/>
                             </constraint>
+                            <constraint firstItem="GnK-LR-9VL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PA1-H9-bCL"/>
+                            <constraint firstItem="yve-xB-WYu" firstAttribute="top" secondItem="GnK-LR-9VL" secondAttribute="bottom" constant="34" id="WBB-63-rCQ"/>
                             <constraint firstItem="LiF-WI-WhP" firstAttribute="top" secondItem="qkX-bj-RQj" secondAttribute="bottom" constant="20" id="WyN-4M-yZF"/>
                             <constraint firstItem="LiF-WI-WhP" firstAttribute="leading" secondItem="qkX-bj-RQj" secondAttribute="leading" id="eH6-Bj-gfo"/>
                             <constraint firstItem="qkX-bj-RQj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="80" id="eOT-Ji-Jzq"/>
@@ -145,6 +161,7 @@
                         <outlet property="navHeader" destination="31c-jV-LjC" id="IAs-e3-85p"/>
                         <outlet property="stack" destination="ERh-hb-AsY" id="NHK-5n-zwT"/>
                         <outlet property="stationList" destination="4i1-dS-4Zx" id="NpK-UY-sHr"/>
+                        <outlet property="touchExample" destination="GnK-LR-9VL" id="4Yc-jh-020"/>
                         <segue destination="RbO-Pn-b7E" kind="show" identifier="islandweatherSegue" id="oML-hS-xH1"/>
                         <segue destination="Fhz-Xu-TPv" kind="show" identifier="stationListSegue" id="WIT-QV-HRb"/>
                     </connections>
@@ -162,14 +179,14 @@
                         <viewControllerLayoutGuide type="bottom" id="uta-vY-nkl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="e0Z-nf-ebg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgrnd1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="qOA-3l-fKo">
-                                <rect key="frame" x="-4" y="44" width="328" height="524"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="89" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e4N-IA-hKq">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>

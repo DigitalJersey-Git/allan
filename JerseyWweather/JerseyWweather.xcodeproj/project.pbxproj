@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D34CD741EE99E1000129C87 /* latest-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D34CD731EE99E1000129C87 /* latest-1.png */; };
+		9D34CD791EE9A04100129C87 /* touchExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D34CD781EE9A04100129C87 /* touchExample.swift */; };
+		9D34CD7B1EE9A0BC00129C87 /* touchExample.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D34CD7A1EE9A0BC00129C87 /* touchExample.xib */; };
 		9D95C70F1ECA086500C41A3A /* detailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D95C70E1ECA086500C41A3A /* detailView.xib */; };
 		9D95C7111ECA088800C41A3A /* detailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D95C7101ECA088800C41A3A /* detailView.swift */; };
 		9D95C7151ECA0CE200C41A3A /* weather_showers.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D95C7141ECA0CE200C41A3A /* weather_showers.png */; };
@@ -29,6 +32,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D34CD731EE99E1000129C87 /* latest-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "latest-1.png"; sourceTree = "<group>"; };
+		9D34CD781EE9A04100129C87 /* touchExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = touchExample.swift; sourceTree = "<group>"; };
+		9D34CD7A1EE9A0BC00129C87 /* touchExample.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = touchExample.xib; sourceTree = "<group>"; };
 		9D95C70E1ECA086500C41A3A /* detailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = detailView.xib; sourceTree = "<group>"; };
 		9D95C7101ECA088800C41A3A /* detailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = detailView.swift; sourceTree = "<group>"; };
 		9D95C7141ECA0CE200C41A3A /* weather_showers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weather_showers.png; sourceTree = "<group>"; };
@@ -63,9 +69,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D34CD751EE99F5200129C87 /* Touches */ = {
+			isa = PBXGroup;
+			children = (
+				9D34CD781EE9A04100129C87 /* touchExample.swift */,
+				9D34CD7A1EE9A0BC00129C87 /* touchExample.xib */,
+			);
+			name = Touches;
+			sourceTree = "<group>";
+		};
 		9D95C7121ECA089800C41A3A /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				9D34CD731EE99E1000129C87 /* latest-1.png */,
 				FC3756D11EE05F93002FDB17 /* backgrnd1.jpg */,
 				9D95C7161ECA0D5600C41A3A /* kweather.png */,
 				9D95C7171ECA0D5600C41A3A /* weather_fog.png */,
@@ -115,6 +131,7 @@
 		FCD028E71E8D75C800CB3347 /* JerseyWweather */ = {
 			isa = PBXGroup;
 			children = (
+				9D34CD751EE99F5200129C87 /* Touches */,
 				9D95C7131ECA096E00C41A3A /* mylocation */,
 				9D95C7121ECA089800C41A3A /* assets */,
 				FC58E3361EA936070094B7D9 /* stationCell */,
@@ -192,6 +209,7 @@
 			files = (
 				FCF132D21E96AFDA0023F5CF /* background.jpeg in Resources */,
 				9D95C7191ECA0D5600C41A3A /* weather_fog.png in Resources */,
+				9D34CD741EE99E1000129C87 /* latest-1.png in Resources */,
 				FCB0FFF71E92BB5F00EE12D6 /* images.jpeg in Resources */,
 				FC3756D21EE05F93002FDB17 /* backgrnd1.jpg in Resources */,
 				FCB0FFF91E92BE8100EE12D6 /* iconmonstr-weather-8-240.png in Resources */,
@@ -203,6 +221,7 @@
 				FCD028F01E8D75C800CB3347 /* Assets.xcassets in Resources */,
 				FC58E3331EA930750094B7D9 /* stationCell.xib in Resources */,
 				FCD028EE1E8D75C800CB3347 /* Main.storyboard in Resources */,
+				9D34CD7B1EE9A0BC00129C87 /* touchExample.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +236,7 @@
 				FCD028EB1E8D75C800CB3347 /* ViewController.swift in Sources */,
 				FC58E3311EA930360094B7D9 /* stationListView.swift in Sources */,
 				9D95C7111ECA088800C41A3A /* detailView.swift in Sources */,
+				9D34CD791EE9A04100129C87 /* touchExample.swift in Sources */,
 				FCB0FFFC1E92C6F800EE12D6 /* islandweather.swift in Sources */,
 				FCD028E91E8D75C800CB3347 /* AppDelegate.swift in Sources */,
 			);

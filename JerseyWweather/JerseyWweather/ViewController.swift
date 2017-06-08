@@ -26,6 +26,7 @@ class weatherStation: NSObject {
 
 class ViewController: UIViewController, XMLParserDelegate, UIPickerViewDelegate, UIPickerViewDataSource  {
     
+    @IBOutlet weak var touchExample: UIButton!
     @IBOutlet weak var stationList: UIButton!
     @IBOutlet weak var mylocation: UIButton!
     @IBOutlet weak var locationPicker: UIPickerView!
@@ -40,6 +41,13 @@ class ViewController: UIViewController, XMLParserDelegate, UIPickerViewDelegate,
     var foundCharacters: String = String()
     var pickerData:[String] = [String]()
     var locationSelected: String?
+    
+    
+    @IBAction func touchExample(_ sender: Any) {
+        if let view = Bundle.main.loadNibNamed("touchExample", owner: self, options: nil)?.first as? touchExample {
+            self.navigationController?.pushViewController(view, animated: true)
+        }
+    }
     
     @IBAction func weatherLocBPush(_ sender: Any) {
         let Btn = sender as! UIButton

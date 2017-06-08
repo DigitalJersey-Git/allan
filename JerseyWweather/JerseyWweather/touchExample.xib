@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <viewController id="HIx-j5-R3H" customClass="touchExample" customModule="JerseyWweather" customModuleProvider="target">
+            <layoutGuides>
+                <viewControllerLayoutGuide type="top" id="j6N-fD-sHu"/>
+                <viewControllerLayoutGuide type="bottom" id="ZcX-dv-OTy"/>
+            </layoutGuides>
+            <view key="view" contentMode="scaleToFill" id="bhl-w7-kqu">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="latest-1.png" translatesAutoresizingMaskIntoConstraints="NO" id="TEL-VV-XIg">
+                        <rect key="frame" x="6" y="132" width="343" height="403"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="TEL-VV-XIg" secondAttribute="height" multiplier="583:685" id="L8k-Q8-xX9"/>
+                            <constraint firstAttribute="width" constant="343" id="znq-uh-FIu"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <gestureRecognizers/>
+                <constraints>
+                    <constraint firstItem="TEL-VV-XIg" firstAttribute="centerY" secondItem="bhl-w7-kqu" secondAttribute="centerY" id="sJd-lh-Nsu"/>
+                    <constraint firstItem="TEL-VV-XIg" firstAttribute="centerX" secondItem="bhl-w7-kqu" secondAttribute="centerX" constant="-10" id="y2m-Zn-PTY"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="monsterImage" destination="TEL-VV-XIg" id="vFG-zM-7Cz"/>
+            </connections>
+            <point key="canvasLocation" x="147.5" y="13.5"/>
+        </viewController>
+    </objects>
+    <resources>
+        <image name="latest-1.png" width="563" height="685"/>
+    </resources>
+</document>
